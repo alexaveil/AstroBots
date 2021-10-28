@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
-function App() {
+import { ScrollToTop, Loading } from "./components";
+import * as keys from "./utils/keys";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#3043E9",
+    },
+  },
+});
+
+const LazyHome = lazy(() => import("./pages/Home"));
+
+const PublicRoute = ({ component, ...rest }) => {
+  return <Route {...rest} component={component} />;
+};
+
+const App = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Suspense fallback={<Loading />}>
+          <ScrollToTop />
+          <Switch>
+            <PublicRoute exact path={keys.HOME} component={LazyHome} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
