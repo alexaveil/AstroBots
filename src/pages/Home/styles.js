@@ -5,12 +5,25 @@ const useStyles = makeStyles((theme) => ({
   sectionOne: {
     backgroundColor: "#d0cece",
     height: "100vh",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    [theme.breakpoints.down('sm')]: {
+      height: "85vh",
+    }
   },
   robotWrapper: {
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'center',
-    height: "100%"
+    height: "100%",
+    maxWidth: "700px",
+    width: "100%",
+    position: "relative",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: "column",
+      justifyContent: 'flex-end',
+    },
   },
   welcomeWrapper: {
     backgroundColor: "#ecebeb",
@@ -18,8 +31,15 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px 15px',
     position: "absolute",
     top: '45%',
-    right: '30%',
-    borderRadius: 10
+    right: 20,
+    borderRadius: 10,
+    [theme.breakpoints.down('sm')]: {
+      position: "relative",
+      top: 0,
+      right: 0,
+      left: 0,
+      margin: '0 auto'
+    },
   },
   robotImage: {
     maxWidth: 700,
@@ -28,12 +48,20 @@ const useStyles = makeStyles((theme) => ({
   sectionTwo: {
     height: "60vh",
     display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      height: "auto",
+      flexDirection: "column"
+    },
   },
   sectionTwoLeft: {
     width: "55%",
     height: "100%",
     display: 'flex',
     justifyContent: 'flex-end',
+    [theme.breakpoints.down('lg')]: {
+      width: "100%",
+      padding: 20
+    },
   },
   sectionTextWrapper: {
     display: 'flex',
@@ -41,6 +69,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     paddingRight: 100,
     width: "60%",
+    [theme.breakpoints.down('lg')]: {
+      width: "100%",
+      padding: 0
+    },
   },
   mainTitle: {
     display: 'flex',
@@ -48,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: 30,
     textTransform: "uppercase",
+    [theme.breakpoints.down('sm')]: {
+      alignItems: "center",
+    },
   },
   mainTitleRed: {
     color: "#d10000",
@@ -57,6 +92,12 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     backgroundColor: "#d10000",
     display: 'flex',
+    [theme.breakpoints.down('lg')]: {
+      width: "100%",
+    },
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: "center",
+    },
   },
   redRobotImage: {
     maxWidth: 500,

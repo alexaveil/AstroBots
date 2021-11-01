@@ -24,7 +24,7 @@ const Header = () => {
     >
       <Container>
         <Grid container className={classes.headerWrapper}>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={3}>
             <div className={classes.logoWrapper}>
               <Avatar alt="Logo" src={LogoImage} onClick={() => {}} />
               <Typography variant="h6" color="inherit" noWrap sx={{ m: 1 }}>
@@ -32,7 +32,7 @@ const Header = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={6} className={classes.navWrapper}>
+          <Grid item xs={12} sm={5} className={classes.navWrapper}>
             <nav>
               <Link
                 variant="button"
@@ -60,13 +60,13 @@ const Header = () => {
               </Link>
             </nav>
           </Grid>
-          <Grid item xs={1} className={classes.iconsWrapper}>
+          <Grid item xs={12} sm={1} className={classes.iconsWrapper}>
             <div className={classes.icons}>
               <DiscordIcon />
               <TwitterIcon />
             </div>
           </Grid>
-          <Grid item xs={2} className={classes.buttonWrapper}>
+          <Grid item xs={12} sm={3} lg={2} className={classes.buttonWrapper}>
             <Button
               href="#"
               variant="contained"

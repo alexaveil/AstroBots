@@ -84,17 +84,17 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <div className={classes.itemImage}>
                   <img src={RedRobot} className={classes.redRobotImage} />
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <div className={`${classes.itemImage} ${classes.itemImageBig}`}>
                   <img src={RedRobot} className={classes.redRobotImage} />
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <div className={classes.itemImage}>
                   <img src={RedRobot} className={classes.redRobotImage} />
                 </div>
@@ -114,10 +114,10 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container>
-              <Grid item xs={5}>
+              <Grid item xs={12} sm={5} className={classes.redRobotImageWrapper}>
                 <img src={RedRobot} className={classes.redRobotImage} />
               </Grid>
-              <Grid item xs={7}>
+              <Grid item xs={12} sm={7}>
                 <div className={classes.progressesWrapper}>
                   <div className={classes.progressItem}>
                     <div className={classes.progressItemText}>Empathy</div>

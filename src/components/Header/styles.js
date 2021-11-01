@@ -13,16 +13,28 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+      margin: '5px 0!important'
+    }
   },
   navWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+      margin: '5px 0!important'
+    }
   },
   iconsWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+      margin: '5px 0!important'
+    }
   },
   icons: {
     display: 'flex',
@@ -33,6 +45,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+      margin: '5px 0!important'
+    }
   },
   connectButton: {
     backgroundColor: 'black!important',
