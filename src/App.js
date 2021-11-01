@@ -15,6 +15,7 @@ const theme = createTheme({
 });
 
 const LazyHome = lazy(() => import("./pages/Home"));
+const LazyChat = lazy(() => import("./pages/Chat"));
 
 const PublicRoute = ({ component, ...rest }) => {
   return <Route {...rest} component={component} />;
@@ -33,6 +34,7 @@ const App = () => {
           <ScrollToTop />
           <Switch>
             <PublicRoute exact path={keys.HOME} component={LazyHome} />
+            <PublicRoute path={keys.CHAT} component={LazyChat} />
           </Switch>
         </Suspense>
       </Router>
