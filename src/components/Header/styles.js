@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   iconsWrapper: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'center',

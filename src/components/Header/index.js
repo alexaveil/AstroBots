@@ -34,7 +34,7 @@ const Header = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={12} sm={5} className={classes.navWrapper}>
+          <Grid item xs={12} sm={6} className={classes.navWrapper}>
             <nav>
               <Link
                 variant="button"
@@ -68,7 +68,7 @@ const Header = () => {
               <TwitterIcon />
             </div>
           </Grid>
-          <Grid item xs={12} sm={3} lg={2} className={classes.buttonWrapper}>
+          <Grid item xs={12} sm={2} className={classes.buttonWrapper}>
             <Button
               variant="contained"
               className={classes.connectButton}

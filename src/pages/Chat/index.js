@@ -1,30 +1,29 @@
 import React from "react";
-
-import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
-import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import SearchIcon from "@mui/icons-material/Search";
+import SendIcon from "@mui/icons-material/Send";
 
 import { Header, Footer } from "../../components";
-import MainRobot from "../../assets/android-black-and-gold.png";
 import RedRobot from "../../assets/android-red.png";
 import useStyles from "./styles";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 30,
-  borderRadius: 30,
+  height: 15,
+  borderRadius: 15,
   [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: 'transparent',
-    border: '0.5px solid rgba(255, 255, 255, 0.5)',
+    backgroundColor: "transparent",
+    border: "0.5px solid rgba(255, 255, 255, 0.5)",
   },
   [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 30,
-    backgroundColor: 'white',
+    borderRadius: 15,
+    backgroundColor: "white",
   },
 }));
-
 
 const Chat = () => {
   const classes = useStyles();
@@ -34,48 +33,121 @@ const Chat = () => {
       <Header />
       <main>
         <section className={classes.wrapper}>
-          <Container>
-            <Grid container className={classes.chatWrapper}>
-              <Grid item sm={4} className={classes.sidebar}>
-                <Grid item>
-                  <img src={RedRobot} className={classes.robotImage} />
-                </Grid>
-                <Grid item>
-                  <div className={classes.progressesWrapper}>
-                    <div className={classes.progressItem}>
-                      <div className={classes.progressItemText}>Empathy</div>
-                      <BorderLinearProgress className={classes.progressItemProgress} variant="determinate" value={50} />
+          <div className={classes.chatWrapper}>
+            <div className={classes.sidebar}>
+              <div>
+                <div className={classes.robotName}>Astro Bot #88</div>
+                <img src={RedRobot} className={classes.robotImage} />
+              </div>
+              <div>
+                <div className={classes.progressesWrapper}>
+                  <div className={classes.progressItem}>
+                    <div className={classes.progressItemText}>Empathy</div>
+                    <BorderLinearProgress
+                      className={classes.progressItemProgress}
+                      variant="determinate"
+                      value={50}
+                    />
+                  </div>
+                  <div className={classes.progressItem}>
+                    <div className={classes.progressItemText}>Kindness</div>
+                    <BorderLinearProgress
+                      className={classes.progressItemProgress}
+                      variant="determinate"
+                      value={30}
+                    />
+                  </div>
+                  <div className={classes.progressItem}>
+                    <div className={classes.progressItemText}>Intelligence</div>
+                    <BorderLinearProgress
+                      className={classes.progressItemProgress}
+                      variant="determinate"
+                      value={70}
+                    />
+                  </div>
+                  <div className={classes.progressItem}>
+                    <div className={classes.progressItemText}>Sarcasm</div>
+                    <BorderLinearProgress
+                      className={classes.progressItemProgress}
+                      variant="determinate"
+                      value={50}
+                    />
+                  </div>
+                  <div className={classes.progressItem}>
+                    <div className={classes.progressItemText}>Ellocuence</div>
+                    <BorderLinearProgress
+                      className={classes.progressItemProgress}
+                      variant="determinate"
+                      value={20}
+                    />
+                  </div>
+                  <div className={classes.progressItem}>
+                    <div className={classes.progressItemText}>Creative</div>
+                    <BorderLinearProgress
+                      className={classes.progressItemProgress}
+                      variant="determinate"
+                      value={80}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={classes.content}>
+              <div className={classes.topPanel}>
+                <div className={classes.topPanelIcons}>
+                  <IconButton>
+                    <SearchIcon
+                      sx={{ fontSize: 30 }}
+                      className={classes.icon}
+                    />
+                  </IconButton>
+                  <IconButton>
+                    <MoreVertIcon
+                      sx={{ fontSize: 30 }}
+                      className={classes.icon}
+                    />
+                  </IconButton>
+                </div>
+              </div>
+              <div className={classes.messagesWraper}>
+                <div className={classes.messagePeriod}>
+                  <div className={classes.messageTitle}>Yesterday</div>
+                  <div className={classes.messageBlock}>
+                    <div className={classes.messageRightWrapper}>
+                      <div className={classes.messageRightText}>What's 2+2?</div>
                     </div>
-                    <div className={classes.progressItem}>
-                      <div className={classes.progressItemText}>Kindness</div>
-                      <BorderLinearProgress className={classes.progressItemProgress} variant="determinate" value={30} />
-                    </div>
-                    <div className={classes.progressItem}>
-                      <div className={classes.progressItemText}>Intelligence</div>
-                      <BorderLinearProgress className={classes.progressItemProgress} variant="determinate" value={70} />
-                    </div>
-                    <div className={classes.progressItem}>
-                      <div className={classes.progressItemText}>Sarcasm</div>
-                      <BorderLinearProgress className={classes.progressItemProgress} variant="determinate" value={50} />
-                    </div>
-                    <div className={classes.progressItem}>
-                      <div className={classes.progressItemText}>Ellocuence</div>
-                      <BorderLinearProgress className={classes.progressItemProgress} variant="determinate" value={20} />
-                    </div>
-                    <div className={classes.progressItem}>
-                      <div className={classes.progressItemText}>Creative</div>
-                      <BorderLinearProgress className={classes.progressItemProgress} variant="determinate" value={80} />
+                    <div className={classes.messageLeftWrapper}>
+                      <div className={classes.messageLeftText}>
+                        The answer of 2+2 is 4
+                      </div>
                     </div>
                   </div>
-                </Grid>
-              </Grid>
-              <Grid item sm={8} className={classes.content}>
-                <div className={classes.topPanel}></div>
-                <div className={classes.messagesWraper}></div>
-                <div className={classes.bottomPanel}></div>
-              </Grid>
-            </Grid>
-          </Container>
+                </div>
+                <div className={classes.messagePeriod}>
+                  <div className={classes.messageTitle}>Today</div>
+                  <div className={classes.messageBlock}>
+                    <div className={classes.messageRightWrapper}>
+                      <div className={classes.messageRightText}>How are you?</div>
+                    </div>
+                    <div className={classes.messageLeftWrapper}>
+                      <div className={classes.messageLeftText}>
+                        I'm fine
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={classes.bottomPanel}>
+                <input
+                  placeholder={"Type a message"}
+                  className={classes.messageInput}
+                />
+                <IconButton>
+                  <SendIcon sx={{ fontSize: 30 }} className={classes.icon} />
+                </IconButton>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
