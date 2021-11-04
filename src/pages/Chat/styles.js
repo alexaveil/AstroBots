@@ -3,28 +3,48 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    backgroundColor: "#00010C",
-    height: "96vh",
+    backgroundColor: "#00010d",
+    height: "100vh",
     width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 30,
   },
   chatWrapper: {
-    paddingTop: "110px",
-    paddingLeft: 30,
-    paddingRight: 30,
     margin: "0 auto",
     width: "100%",
+    height: "100%",
     display: "flex",
     justifyContent: "center",
   },
   sidebar: {
-    backgroundColor: "#11121A",
-    borderRight: "1px solid rgb(255 255 255 / 30%)",
-    height: "82vh",
+    backgroundColor: "#11121b",
+    borderRight: "1px solid rgb(255 255 255 / 15%)",
     width: "25%",
-    padding: "0 40px",
+    padding: 40,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+  },
+  userWrapper: {
+    display: "flex",
+    alignItems: "center",
+  },
+  userAvatar: {
+    marginRight: 20,
+    height: 50
+  },
+  userAvatarImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 50
+  },
+  userName: {
+    color: 'white',
+    fontSize: 18
+  },
+  robotWrapper: {
+    marginTop: 60,
   },
   robotName: {
     textAlign: "center",
@@ -48,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
   },
   progressItemText: {
     fontSize: 16,
-    fontWeight: "bold",
     color: "white",
     width: "30%",
   },
@@ -57,13 +76,12 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     width: "70%",
-    height: "82vh",
     display: "flex",
     flexDirection: "column",
   },
   topPanel: {
-    height: 60,
-    backgroundColor: "#11121A",
+    height: 80,
+    backgroundColor: "#11121b",
     width: "100%",
     display: "flex",
     flexDirection: "row",
@@ -76,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
   },
   messagesWraper: {
     height: "100%",
-    padding: 40,
+    padding: 50,
     display: "flex",
     flexDirection: "column",
   },
@@ -86,19 +104,21 @@ const useStyles = makeStyles((theme) => ({
   messageTitle: {
     color: "#D8D8D8",
     textAlign: "center",
+    fontSize: 14
   },
   messageBlock: {
     display: "flex",
     flexDirection: "column",
+    fontSize: 18
   },
   messageLeftWrapper: {
     width: "100%",
     display: "flex",
   },
   messageLeftText: {
-    backgroundColor: "#26272F",
+    backgroundColor: "#262730",
     color: "#FFFFFF",
-    padding: 10,
+    padding: '10px 20px',
     borderRadius: 10
   },
   messageRightWrapper: {
@@ -107,18 +127,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
   },
   messageRightText: {
-    backgroundColor: "#0D1A8C",
+    backgroundColor: "#101492",
     color: "#FFFFFF",
-    padding: 10,
+    padding: '10px 20px',
     borderRadius: 10
   },
   bottomPanel: {
-    height: 80,
-    backgroundColor: "#11121A",
+    height: 100,
+    backgroundColor: "#11121b",
     width: "100%",
     display: "flex",
     alignItems: "center",
-    padding: "0 30px",
+    padding: "0 50px",
   },
   messageInput: {
     backgroundColor: "#26272F",
@@ -126,6 +146,7 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     padding: "10px 20px",
     borderRadius: 20,
+    fontSize: 18,
     color: "#FFFFFF",
     outline: "none",
   },
