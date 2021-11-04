@@ -18,20 +18,42 @@ const useStyles = makeStyles((theme) => ({
       margin: '5px 0!important'
     }
   },
+  logoImage: {
+    maxWidth: 60
+  },
   navWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'center',
-      margin: '5px 0!important'
+      margin: '20px 0!important'
+    }
+  },
+  topMenu: {
+    display: 'flex',
+    flexDirection: 'row',
+    listStyle: 'none',
+    margin: 0,
+    padding: 0,
+  },
+  topMenuItem: {
+    padding: '0 20px'
+  },
+  topMenuItemLink: {
+    textTransform: "uppercase",
+    textDecoration: "none",
+    color: 'black',
+    "&:hover": {
+      textDecoration: "underline"
     }
   },
   iconsWrapper: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'center',
       margin: '5px 0!important'
@@ -41,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  iconsItem: {
+    padding: '0 10px'
   },
   buttonWrapper: {
     display: 'flex',

@@ -2,16 +2,15 @@ import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
-import Avatar from "@mui/material/Avatar";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useHistory } from "react-router-dom";
 
-import { DiscordIcon } from "../Icons";
+import { DiscordIcon, OpenSeaIcon } from "../Icons";
 import * as keys from "../../utils/keys";
 import useStyles from "./styles";
-import LogoImage from "../../assets/logo.png";
+import LogoBlackImage from "../../assets/logo-black.png";
 
 const Header = () => {
   const classes = useStyles();
@@ -19,53 +18,49 @@ const Header = () => {
 
   return (
     <AppBar
-      position="fixed"
+      position="static"
       color="default"
       elevation={0}
       className={classes.header}
     >
       <Container>
         <Grid container className={classes.headerWrapper}>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={1}>
             <div className={classes.logoWrapper}>
-              <Avatar alt="Logo" src={LogoImage} onClick={() => history.push(keys.HOME)} />
-              <Typography variant="h6" color="inherit" noWrap sx={{ m: 1 }}>
-                ASTRO BOTS
-              </Typography>
+              <img
+                alt="Logo"
+                src={LogoBlackImage}
+                className={classes.logoImage}
+                onClick={() => history.push(keys.HOME)}
+              />
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} className={classes.navWrapper}>
+          <Grid item xs={12} sm={8} className={classes.navWrapper}>
             <nav>
-              <Link
-                variant="button"
-                color="text.primary"
-                href="#"
-                sx={{ my: 1, mx: 1.5 }}
-              >
-                About
-              </Link>
-              <Link
-                variant="button"
-                color="text.primary"
-                href="#"
-                sx={{ my: 1, mx: 1.5 }}
-              >
-                Roadmap
-              </Link>
-              <Link
-                variant="button"
-                color="text.primary"
-                href="#"
-                sx={{ my: 1, mx: 1.5 }}
-              >
-                Faq
-              </Link>
+              <ul className={classes.topMenu}>
+                <li className={classes.topMenuItem}>
+                  <a className={classes.topMenuItemLink} href="#about">
+                    About
+                  </a>
+                </li>
+                <li className={classes.topMenuItem}>
+                  <a className={classes.topMenuItemLink} href="#about">
+                    Roadmap
+                  </a>
+                </li>
+                <li className={classes.topMenuItem}>
+                  <a className={classes.topMenuItemLink} href="#about">
+                    Faq
+                  </a>
+                </li>
+              </ul>
             </nav>
           </Grid>
           <Grid item xs={12} sm={1} className={classes.iconsWrapper}>
             <div className={classes.icons}>
-              <DiscordIcon />
-              <TwitterIcon />
+              <div className={classes.iconsItem}><DiscordIcon /></div>
+              <div className={classes.iconsItem}><TwitterIcon /></div>
+              <div className={classes.iconsItem}><OpenSeaIcon /></div>
             </div>
           </Grid>
           <Grid item xs={12} sm={2} className={classes.buttonWrapper}>

@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   sectionOne: {
     backgroundColor: "#d0cece",
-    height: "100vh",
+    height: "95vh",
     width: "100%",
     display: "flex",
     justifyContent: "center",
@@ -27,23 +27,28 @@ const useStyles = makeStyles((theme) => ({
   },
   welcomeWrapper: {
     backgroundColor: "#ecebeb",
-    fontSize: 20,
-    padding: '10px 15px',
+    fontSize: 18,
+    padding: '10px 25px',
     position: "absolute",
-    top: '45%',
+    width: 150,
+    top: '35%',
     right: 20,
     borderRadius: 10,
     [theme.breakpoints.down('sm')]: {
       position: "relative",
-      top: 0,
+      top: -20,
       right: 0,
       left: 0,
       margin: '0 auto'
     },
   },
   robotImage: {
-    maxWidth: 700,
-    width: "100%"
+    maxWidth: 800,
+    width: "100%",
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: 400,
+      margin: '0 auto'
+    },
   },
   sectionTwo: {
     height: "60vh",
