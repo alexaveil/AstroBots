@@ -51,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sectionTwo: {
-    display: "flex",
     padding: "50px 0",
     backgroundColor: "#000000",
   },
@@ -120,6 +119,39 @@ const useStyles = makeStyles((theme) => ({
   progressItemProgress: {
     width: "100%",
   },
+  sectionFour: {
+    backgroundColor: '#08051d',
+    padding: "50px 0",
+  },
+  sectionFourTitleWrapper: {
+    width: "100%",
+    textAlign: "center",
+    marginBottom: 30
+  },
+  sectionFourTitle: {
+    color: "white",
+    textTransform: "uppercase",
+    fontSize: 30,
+    fontWeight: "bold",
+  },
+  itemTeam: {
+    margin: 50
+  },
+  itemTeamImage: {
+    width: "100%",
+  },
+  itemTeamName: {
+    color: "white",
+    textTransform: "uppercase",
+    fontSize: 25,
+    marginTop: 20,
+    marginBottom: 10
+  },
+  itemTeamRole: {
+    color: "#d10000",
+    textTransform: "uppercase",
+    fontSize: 22,
+  }
 }));
 
 export default useStyles;

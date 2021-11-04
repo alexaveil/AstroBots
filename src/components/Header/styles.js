@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     textDecoration: "none",
     color: 'black',
+    outline: 'none',
     "&:hover": {
       textDecoration: "underline"
     }

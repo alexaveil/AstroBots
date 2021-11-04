@@ -10,6 +10,13 @@ import Container from "@mui/material/Container";
 import { Header, Footer } from "../../components";
 import MainRobot from "../../assets/android-black-and-gold.png";
 import RedRobot from "../../assets/android-red.png";
+import Team1 from "../../assets/team-1.png";
+import Team2 from "../../assets/team-2.png";
+import Team3 from "../../assets/team-3.png";
+import Team4 from "../../assets/team-4.png";
+import Team5 from "../../assets/team-5.png";
+import Team6 from "../../assets/team-6.png";
+
 import useStyles from "./styles";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -184,6 +191,61 @@ const Home = () => {
                       value={80}
                     />
                   </div>
+                </div>
+              </Grid>
+            </Grid>
+          </Container>
+        </section>
+        <section className={classes.sectionFour}>
+        <Container>
+            <Grid container>
+              <div className={classes.sectionFourTitleWrapper}>
+                <div className={classes.sectionFourTitle}>
+                  The Team
+                </div>
+              </div>
+            </Grid>
+            <Grid container>
+              <Grid item xs={12} sm={4}>
+                <div className={classes.itemTeam}>
+                  <img src={Team1} className={classes.itemTeamImage} />
+                  <div className={classes.itemTeamName}>Name</div>
+                  <div className={classes.itemTeamRole}>Role</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <div className={classes.itemTeam}>
+                  <img src={Team2} className={classes.itemTeamImage} />
+                  <div className={classes.itemTeamName}>Name</div>
+                  <div className={classes.itemTeamRole}>Role</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <div className={classes.itemTeam}>
+                  <img src={Team3} className={classes.itemTeamImage} />
+                  <div className={classes.itemTeamName}>Name</div>
+                  <div className={classes.itemTeamRole}>Role</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <div className={classes.itemTeam}>
+                  <img src={Team4} className={classes.itemTeamImage} />
+                  <div className={classes.itemTeamName}>Name</div>
+                  <div className={classes.itemTeamRole}>Role</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <div className={classes.itemTeam}>
+                  <img src={Team5} className={classes.itemTeamImage} />
+                  <div className={classes.itemTeamName}>Name</div>
+                  <div className={classes.itemTeamRole}>Role</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <div className={classes.itemTeam}>
+                  <img src={Team6} className={classes.itemTeamImage} />
+                  <div className={classes.itemTeamName}>Name</div>
+                  <div className={classes.itemTeamRole}>Role</div>
                 </div>
               </Grid>
             </Grid>
