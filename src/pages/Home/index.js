@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
@@ -6,6 +6,11 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import Container from "@mui/material/Container";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
 
 import { Header, Footer } from "../../components";
 import MainRobot from "../../assets/android-black-and-gold.png";
@@ -18,6 +23,42 @@ import Team5 from "../../assets/team-5.png";
 import Team6 from "../../assets/team-6.png";
 
 import useStyles from "./styles";
+
+const Accordion = styled((props) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  "&:not(:last-child)": {
+    borderBottom: 0,
+  },
+  "&:before": {
+    display: "none",
+  },
+}));
+
+const AccordionSummary = styled((props) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === "dark"
+      ? "rgba(255, 255, 255, .05)"
+      : "rgba(0, 0, 0, .03)",
+  flexDirection: "row-reverse",
+  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+    transform: "rotate(90deg)",
+  },
+  "& .MuiAccordionSummary-content": {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: "1px solid rgba(0, 0, 0, .125)",
+}));
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 30,
@@ -34,6 +75,11 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 const Home = () => {
   const classes = useStyles();
+  const [expanded, setExpanded] = useState("panel1");
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
 
   return (
     <>
@@ -196,13 +242,11 @@ const Home = () => {
             </Grid>
           </Container>
         </section>
-        <section className={classes.sectionFour}>
-        <Container>
+        <section id="#about" className={classes.sectionFour}>
+          <Container>
             <Grid container>
               <div className={classes.sectionFourTitleWrapper}>
-                <div className={classes.sectionFourTitle}>
-                  The Team
-                </div>
+                <div className={classes.sectionFourTitle}>The Team</div>
               </div>
             </Grid>
             <Grid container>
@@ -248,6 +292,104 @@ const Home = () => {
                   <div className={classes.itemTeamRole}>Role</div>
                 </div>
               </Grid>
+            </Grid>
+          </Container>
+        </section>
+        <section id="#faq" className={classes.sectionFive}>
+          <Container>
+            <Grid container>
+              <div className={classes.sectionFourTitleWrapper}>
+                <div className={classes.sectionFourTitle}>Faq</div>
+              </div>
+            </Grid>
+            <Grid container>
+              <Accordion
+                expanded={expanded === "panel1"}
+                onChange={handleChange("panel1")}
+              >
+                <AccordionSummary
+                  aria-controls="panel1d-content"
+                  id="panel1d-header"
+                >
+                  <Typography>How can I get an Astro Bot?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion
+                expanded={expanded === "panel2"}
+                onChange={handleChange("panel2")}
+              >
+                <AccordionSummary
+                  aria-controls="panel2d-content"
+                  id="panel2d-header"
+                >
+                  <Typography>How many Astros can I mint?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion
+                expanded={expanded === "panel3"}
+                onChange={handleChange("panel3")}
+              >
+                <AccordionSummary
+                  aria-controls="panel2d-content"
+                  id="panel2d-header"
+                >
+                  <Typography>How can I chat with my Astro?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion
+                expanded={expanded === "panel4"}
+                onChange={handleChange("panel4")}
+              >
+                <AccordionSummary
+                  aria-controls="panel3d-content"
+                  id="panel3d-header"
+                >
+                  <Typography>
+                    Where can I find my Astro’s personality?
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion
+                expanded={expanded === "panel5"}
+                onChange={handleChange("panel5")}
+              >
+                <AccordionSummary
+                  aria-controls="panel3d-content"
+                  id="panel3d-header"
+                >
+                  <Typography>What’s the smart contract address?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </Grid>
           </Container>
         </section>

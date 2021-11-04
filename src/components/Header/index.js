@@ -42,12 +42,12 @@ const Header = () => {
                   </a>
                 </li>
                 <li className={classes.topMenuItem}>
-                  <a className={classes.topMenuItemLink} href="#about">
+                  <a className={classes.topMenuItemLink} href="#roadmap">
                     Roadmap
                   </a>
                 </li>
                 <li className={classes.topMenuItem}>
-                  <a className={classes.topMenuItemLink} href="#about">
+                  <a className={classes.topMenuItemLink} href="#faq">
                     Faq
                   </a>
                 </li>

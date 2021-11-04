@@ -151,7 +151,11 @@ const useStyles = makeStyles((theme) => ({
     color: "#d10000",
     textTransform: "uppercase",
     fontSize: 22,
-  }
+  },
+  sectionFive: {
+    backgroundColor: '#000000',
+    padding: "50px 0",
+  },
 }));
 
 export default useStyles;
