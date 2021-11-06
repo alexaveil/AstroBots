@@ -13,6 +13,12 @@ import LogoBlackImage from "../../assets/logo-black.png";
 const Header = () => {
   const classes = useStyles();
   const history = useHistory();
+  
+  const scrollToSection = (e) => {
+    e.preventDefault();
+    let scrollDiv = document.querySelector(e?.target?.hash);
+    scrollDiv?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <AppBar
@@ -37,17 +43,29 @@ const Header = () => {
             <nav>
               <ul className={classes.topMenu}>
                 <li className={classes.topMenuItem}>
-                  <a className={classes.topMenuItemLink} href="#about">
+                  <a
+                    className={classes.topMenuItemLink}
+                    href="#about"
+                    onClick={scrollToSection}
+                  >
                     About
                   </a>
                 </li>
                 <li className={classes.topMenuItem}>
-                  <a className={classes.topMenuItemLink} href="#roadmap">
+                  <a
+                    className={classes.topMenuItemLink}
+                    href="#roadmap"
+                    onClick={scrollToSection}
+                  >
                     Roadmap
                   </a>
                 </li>
                 <li className={classes.topMenuItem}>
-                  <a className={classes.topMenuItemLink} href="#faq">
+                  <a
+                    className={classes.topMenuItemLink}
+                    href="#faq"
+                    onClick={scrollToSection}
+                  >
                     Faq
                   </a>
                 </li>
@@ -56,9 +74,15 @@ const Header = () => {
           </Grid>
           <Grid item xs={12} sm={1} className={classes.iconsWrapper}>
             <div className={classes.icons}>
-              <div className={classes.iconsItem}><DiscordIcon /></div>
-              <div className={classes.iconsItem}><TwitterIcon /></div>
-              <div className={classes.iconsItem}><OpenSeaIcon /></div>
+              <div className={classes.iconsItem}>
+                <DiscordIcon />
+              </div>
+              <div className={classes.iconsItem}>
+                <TwitterIcon />
+              </div>
+              <div className={classes.iconsItem}>
+                <OpenSeaIcon />
+              </div>
             </div>
           </Grid>
           <Grid item xs={12} sm={2} className={classes.buttonWrapper}>

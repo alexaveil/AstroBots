@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     [theme.breakpoints.down("sm")]: {
-      height: "85vh",
+      height: "72vh",
     },
   },
   robotWrapper: {
@@ -73,6 +73,9 @@ const useStyles = makeStyles((theme) => ({
   sectionThree: {
     backgroundColor: "#000000",
     padding: "50px 0",
+    [theme.breakpoints.down("sm")]: {
+      padding: "30px 0",
+    },
   },
   sectionThreeTitleWrapper: {
     color: "white",
@@ -80,6 +83,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     padding: "50px 0",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0",
+      paddingBottom: "20px"
+    },
   },
   sectionThreeTitle: {
     textTransform: "uppercase",
@@ -88,22 +95,38 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     maxWidth: "80%",
     marginBottom: 20,
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+    },
   },
   sectionThreeSubTitle: {
     maxWidth: "80%",
     fontSize: 14,
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+    },
   },
   itemImage: {
     padding: 20,
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+    },
   },
   itemImageBig: {
     padding: 5,
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+    },
   },
   progressesWrapper: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     padding: "50px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0px",
+      paddingTop: 20
+    },
   },
   progressItem: {
     display: "flex",
@@ -134,9 +157,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 30,
     fontWeight: "bold",
   },
-  itemTeam: {
-    margin: 50
-  },
   itemTeamImage: {
     width: "100%",
   },
@@ -145,7 +165,6 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontSize: 25,
     marginTop: 20,
-    marginBottom: 10
   },
   itemTeamRole: {
     color: "#d10000",
@@ -156,6 +175,37 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#000000',
     padding: "50px 0",
   },
+  sectionFiveContentWrapper: {
+    maxWidth: 900,
+    width: '100%',
+    margin: '0 auto'
+  },
+  joinContentWrapper: {
+    maxWidth: 900,
+    width: '100%',
+    margin: '60px auto',
+  },
+  joinTitle: {
+    color: "white",
+    textTransform: "uppercase",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginTop: 30,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: '0px!important',
+    },
+  },
+  joinText: {
+    color: "white",
+    fontSize: 16,
+    margin: '30px 0'
+  },
+  joinButton: {
+    borderRadius: '0!important',
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: '30px!important'
+    },
+  }
 }));
 
 export default useStyles;

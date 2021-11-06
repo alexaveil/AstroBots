@@ -6,11 +6,13 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import Container from "@mui/material/Container";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 import { Header, Footer } from "../../components";
 import MainRobot from "../../assets/android-black-and-gold.png";
@@ -26,41 +28,44 @@ import useStyles from "./styles";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  "&:not(:last-child)": {
-    borderBottom: 0,
-  },
-  "&:before": {
-    display: "none",
-  },
+))(() => ({
+  backgroundColor: "transparent!important",
+  color: "white",
+  borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
 }));
 
-const AccordionSummary = styled((props) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark"
-      ? "rgba(255, 255, 255, .05)"
-      : "rgba(0, 0, 0, .03)",
-  flexDirection: "row-reverse",
+const AccordionSummary = styled((props) => {
+  const { expanded } = props;
+  return (
+    <MuiAccordionSummary
+      expandIcon={
+        !!expanded ? (
+          <RemoveIcon sx={{ fontSize: "1.5rem", color: "white" }} />
+        ) : (
+          <AddIcon sx={{ fontSize: "1.5rem", color: "white" }} />
+        )
+      }
+      {...props}
+    />
+  );
+})(() => ({
+  paddingLeft: 0,
+  paddingRight: 0,
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-    transform: "rotate(90deg)",
+    transform: "rotate(180deg)",
   },
   "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1),
+    marginLeft: 0,
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
-  borderTop: "1px solid rgba(0, 0, 0, .125)",
+  paddingLeft: 0,
+  paddingRight: 0,
 }));
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 30,
   borderRadius: 30,
   [`&.${linearProgressClasses.colorPrimary}`]: {
@@ -75,10 +80,10 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 const Home = () => {
   const classes = useStyles();
-  const [expanded, setExpanded] = useState("panel1");
+  const [expanded, setExpanded] = useState(false);
 
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
   };
 
   return (
@@ -242,60 +247,52 @@ const Home = () => {
             </Grid>
           </Container>
         </section>
-        <section id="#about" className={classes.sectionFour}>
+        <section id="about" className={classes.sectionFour}>
           <Container>
             <Grid container>
               <div className={classes.sectionFourTitleWrapper}>
                 <div className={classes.sectionFourTitle}>The Team</div>
               </div>
             </Grid>
-            <Grid container>
+            <Grid
+              container
+              rowSpacing={4}
+              columnSpacing={{ xs: 2, sm: 6, md: 12 }}
+            >
               <Grid item xs={12} sm={4}>
-                <div className={classes.itemTeam}>
-                  <img src={Team1} className={classes.itemTeamImage} />
-                  <div className={classes.itemTeamName}>Name</div>
-                  <div className={classes.itemTeamRole}>Role</div>
-                </div>
+                <img src={Team1} className={classes.itemTeamImage} />
+                <div className={classes.itemTeamName}>Name</div>
+                <div className={classes.itemTeamRole}>Role</div>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <div className={classes.itemTeam}>
-                  <img src={Team2} className={classes.itemTeamImage} />
-                  <div className={classes.itemTeamName}>Name</div>
-                  <div className={classes.itemTeamRole}>Role</div>
-                </div>
+                <img src={Team2} className={classes.itemTeamImage} />
+                <div className={classes.itemTeamName}>Name</div>
+                <div className={classes.itemTeamRole}>Role</div>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <div className={classes.itemTeam}>
-                  <img src={Team3} className={classes.itemTeamImage} />
-                  <div className={classes.itemTeamName}>Name</div>
-                  <div className={classes.itemTeamRole}>Role</div>
-                </div>
+                <img src={Team3} className={classes.itemTeamImage} />
+                <div className={classes.itemTeamName}>Name</div>
+                <div className={classes.itemTeamRole}>Role</div>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <div className={classes.itemTeam}>
-                  <img src={Team4} className={classes.itemTeamImage} />
-                  <div className={classes.itemTeamName}>Name</div>
-                  <div className={classes.itemTeamRole}>Role</div>
-                </div>
+                <img src={Team4} className={classes.itemTeamImage} />
+                <div className={classes.itemTeamName}>Name</div>
+                <div className={classes.itemTeamRole}>Role</div>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <div className={classes.itemTeam}>
-                  <img src={Team5} className={classes.itemTeamImage} />
-                  <div className={classes.itemTeamName}>Name</div>
-                  <div className={classes.itemTeamRole}>Role</div>
-                </div>
+                <img src={Team5} className={classes.itemTeamImage} />
+                <div className={classes.itemTeamName}>Name</div>
+                <div className={classes.itemTeamRole}>Role</div>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <div className={classes.itemTeam}>
-                  <img src={Team6} className={classes.itemTeamImage} />
-                  <div className={classes.itemTeamName}>Name</div>
-                  <div className={classes.itemTeamRole}>Role</div>
-                </div>
+                <img src={Team6} className={classes.itemTeamImage} />
+                <div className={classes.itemTeamName}>Name</div>
+                <div className={classes.itemTeamRole}>Role</div>
               </Grid>
             </Grid>
           </Container>
         </section>
-        <section id="#faq" className={classes.sectionFive}>
+        <section id="faq" className={classes.sectionFive}>
           <Container>
             <Grid container>
               <div className={classes.sectionFourTitleWrapper}>
@@ -303,93 +300,132 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container>
-              <Accordion
-                expanded={expanded === "panel1"}
-                onChange={handleChange("panel1")}
-              >
-                <AccordionSummary
-                  aria-controls="panel1d-content"
-                  id="panel1d-header"
-                >
-                  <Typography>How can I get an Astro Bot?</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel2"}
-                onChange={handleChange("panel2")}
-              >
-                <AccordionSummary
-                  aria-controls="panel2d-content"
-                  id="panel2d-header"
-                >
-                  <Typography>How many Astros can I mint?</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel3"}
-                onChange={handleChange("panel3")}
-              >
-                <AccordionSummary
-                  aria-controls="panel2d-content"
-                  id="panel2d-header"
-                >
-                  <Typography>How can I chat with my Astro?</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel4"}
-                onChange={handleChange("panel4")}
-              >
-                <AccordionSummary
-                  aria-controls="panel3d-content"
-                  id="panel3d-header"
-                >
-                  <Typography>
-                    Where can I find my Astro’s personality?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel5"}
-                onChange={handleChange("panel5")}
-              >
-                <AccordionSummary
-                  aria-controls="panel3d-content"
-                  id="panel3d-header"
-                >
-                  <Typography>What’s the smart contract address?</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
+              <Grid item sm={12}>
+                <div className={classes.sectionFiveContentWrapper}>
+                  <Accordion
+                    expanded={expanded === "panel1"}
+                    onChange={handleChange("panel1")}
+                  >
+                    <AccordionSummary
+                      expanded={expanded === "panel1"}
+                      aria-controls="panel1d-content"
+                      id="panel1d-header"
+                    >
+                      <Typography>How can I get an Astro Bot?</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion
+                    expanded={expanded === "panel2"}
+                    onChange={handleChange("panel2")}
+                  >
+                    <AccordionSummary
+                      expanded={expanded === "panel2"}
+                      aria-controls="panel2d-content"
+                      id="panel2d-header"
+                    >
+                      <Typography>How many Astros can I mint?</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion
+                    expanded={expanded === "panel3"}
+                    onChange={handleChange("panel3")}
+                  >
+                    <AccordionSummary
+                      expanded={expanded === "panel3"}
+                      aria-controls="panel2d-content"
+                      id="panel2d-header"
+                    >
+                      <Typography>How can I chat with my Astro?</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion
+                    expanded={expanded === "panel4"}
+                    onChange={handleChange("panel4")}
+                  >
+                    <AccordionSummary
+                      expanded={expanded === "panel4"}
+                      aria-controls="panel3d-content"
+                      id="panel3d-header"
+                    >
+                      <Typography>
+                        Where can I find my Astro’s personality?
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion
+                    expanded={expanded === "panel5"}
+                    onChange={handleChange("panel5")}
+                  >
+                    <AccordionSummary
+                      expanded={expanded === "panel5"}
+                      aria-controls="panel3d-content"
+                      id="panel3d-header"
+                    >
+                      <Typography>
+                        What’s the smart contract address?
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </div>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item sm={12}>
+                <div className={classes.joinContentWrapper}>
+                  <Grid container>
+                    <Grid item sx={12} sm={8}>
+                      <div className={classes.joinTitle}>
+                        Join the community
+                      </div>
+                      <div className={classes.joinText}>
+                        Meet the community, join our discord to get the
+                        <br />
+                        latest news, announcements and to hang out a bit.
+                      </div>
+                      <Button
+                        variant="contained"
+                        size="large"
+                        className={classes.joinButton}
+                      >
+                        Join our discord
+                      </Button>
+                    </Grid>
+                    <Grid item sx={12} sm={4}>
+                      <img src={Team4} className={classes.itemTeamImage} />
+                    </Grid>
+                  </Grid>
+                </div>
+              </Grid>
             </Grid>
           </Container>
         </section>
