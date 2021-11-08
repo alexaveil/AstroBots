@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '20px 0',
   },
   logoImage: {
-    maxWidth: 60
+    maxWidth: 130
   },
   icons: {
     display: 'flex',

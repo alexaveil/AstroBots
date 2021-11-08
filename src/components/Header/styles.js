@@ -6,27 +6,31 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#d0cece!important',
   },
   headerWrapper: {
-    paddingTop: 20,
-    paddingBottom: 20,
+    paddingTop: 40,
+    paddingBottom: 40,
   },
   logoWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
       margin: '5px 0!important'
     }
   },
-  logoImage: {
-    maxWidth: 60
+  logoImageLetter: {
+    maxWidth: 60,
+    marginRight: 20
+  },
+  logoImageText: {
+    maxWidth: 200
   },
   navWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
       margin: '20px 0!important'
     }
@@ -46,24 +50,24 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: 'black',
     outline: 'none',
+    fontSize: 22,
     "&:hover": {
       textDecoration: "underline"
     }
   },
   iconsWrapper: {
     display: 'flex',
-    flexDirection: 'row',
     justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    [theme.breakpoints.down('sm')]: {
+    alignItems: 'center',
+    [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
       margin: '5px 0!important'
     }
   },
   icons: {
     display: 'flex',
-    flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 10
   },
   iconsItem: {
     padding: '0 10px'
@@ -72,14 +76,18 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    [theme.breakpoints.down('sm')]: {
+    alignItems: 'center',
+    [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
       margin: '5px 0!important'
     }
   },
   connectButton: {
     backgroundColor: 'black!important',
-    borderRadius: '0!important'
+    borderRadius: '0!important',
+    textTransform: "capitalize!important",
+    fontSize: "18px!important",
+    height: "40px!important"
   },
 }))
 

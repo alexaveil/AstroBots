@@ -8,17 +8,18 @@ import { useHistory } from "react-router-dom";
 import { DiscordIcon, OpenSeaIcon } from "../Icons";
 import * as keys from "../../utils/keys";
 import useStyles from "./styles";
-import LogoBlackImage from "../../assets/logo-black.png";
+import LogoBlackLetter from "../../assets/images/logo-black-letter.png";
+import LogoBlackText from "../../assets/images/logo-black-text.png";
 
 const Header = () => {
   const classes = useStyles();
   const history = useHistory();
-  
+
   const scrollToSection = (e) => {
     e.preventDefault();
     let scrollDiv = document.querySelector(e?.target?.hash);
-    scrollDiv?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+    scrollDiv?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <AppBar
@@ -29,17 +30,13 @@ const Header = () => {
     >
       <Container>
         <Grid container className={classes.headerWrapper}>
-          <Grid item xs={12} sm={1}>
-            <div className={classes.logoWrapper}>
-              <img
-                alt="Logo"
-                src={LogoBlackImage}
-                className={classes.logoImage}
-                onClick={() => history.push(keys.HOME)}
-              />
-            </div>
+          <Grid item xs={12} sm={6} md={4}>
+            <a href="/" className={classes.logoWrapper}>
+              <img src={LogoBlackLetter} className={classes.logoImageLetter} />
+              <img src={LogoBlackText} className={classes.logoImageText} />
+            </a>
           </Grid>
-          <Grid item xs={12} sm={8} className={classes.navWrapper}>
+          <Grid item xs={12} sm={6} md={4} className={classes.navWrapper}>
             <nav>
               <ul className={classes.topMenu}>
                 <li className={classes.topMenuItem}>
@@ -72,7 +69,7 @@ const Header = () => {
               </ul>
             </nav>
           </Grid>
-          <Grid item xs={12} sm={1} className={classes.iconsWrapper}>
+          <Grid item xs={12} sm={6} md={2} className={classes.iconsWrapper}>
             <div className={classes.icons}>
               <div className={classes.iconsItem}>
                 <DiscordIcon />
@@ -85,7 +82,7 @@ const Header = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} sm={2} className={classes.buttonWrapper}>
+          <Grid item xs={12} sm={6} md={2} className={classes.buttonWrapper}>
             <Button
               variant="contained"
               className={classes.connectButton}

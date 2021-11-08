@@ -7,6 +7,14 @@ import { ScrollToTop, Loading } from "./components";
 import * as keys from "./utils/keys";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: "HelveticaNeueCyr",
+    fontSize: 14,
+    fontWeightUltraLight: 100,
+    fontWeightLight: 300,
+    fontWeightMedium: 500,
+    fontWeightBold: 900,
+  },
   palette: {
     primary: {
       main: "#3043E9",

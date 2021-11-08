@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import Zoom from "@mui/material/Zoom";
 import Container from "@mui/material/Container";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -13,16 +13,17 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
 
 import { Header, Footer } from "../../components";
-import MainRobot from "../../assets/android-black-and-gold.png";
-import RedRobot from "../../assets/android-red.png";
-import Team1 from "../../assets/team-1.png";
-import Team2 from "../../assets/team-2.png";
-import Team3 from "../../assets/team-3.png";
-import Team4 from "../../assets/team-4.png";
-import Team5 from "../../assets/team-5.png";
-import Team6 from "../../assets/team-6.png";
+import MainRobot from "../../assets/images/android-black-and-gold.png";
+import RedRobot from "../../assets/images/android-red.png";
+import Team1 from "../../assets/images/team-1.png";
+import Team2 from "../../assets/images/team-2.png";
+import Team3 from "../../assets/images/team-3.png";
+import Team4 from "../../assets/images/team-4.png";
+import Team5 from "../../assets/images/team-5.png";
+import Team6 from "../../assets/images/team-6.png";
 
 import useStyles from "./styles";
 
@@ -81,9 +82,18 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
 const Home = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+  const [motion, setMotion] = useState(false);
+
+  useEffect(() => {
+    handleChangeMotion();
+  }, []);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
+  };
+
+  const handleChangeMotion = () => {
+    setMotion((prev) => !prev);
   };
 
   return (
@@ -92,7 +102,12 @@ const Home = () => {
       <main>
         <section className={classes.sectionOne}>
           <div className={classes.robotWrapper}>
-            <div className={classes.welcomeWrapper}>Welcome</div>
+            <Zoom
+              in={motion}
+              style={{ transitionDelay: motion ? "1300ms" : "0ms" }}
+            >
+              <div className={classes.welcomeWrapper}>Welcome</div>
+            </Zoom>
             <img src={MainRobot} className={classes.robotImage} />
           </div>
         </section>
@@ -100,32 +115,36 @@ const Home = () => {
           <Container>
             <Grid container>
               <Grid item xs={12} sm={6}>
-                <div className={classes.mainTitle}>
-                  <span>The Most</span>
-                  <br />
-                  <span className={classes.mainTitleRed}>advanced AI bots</span>
-                </div>
-                <div className={classes.mainText}>
-                  <p>
-                    Powered by Open AI’s GPT-3, Astro Bots are able to
-                    <br /> give you fast and advanced answers to your
-                    <br /> questions while having fun and very deep
-                    <br /> conversations.
-                  </p>
-                  <p>
-                    Open AI was founded by Elon Musk and GPT-3 is
-                    <br /> the most advanced language generator, trained with
+                <div className={classes.sectionTwoContent}>
+                  <div className={classes.mainTitle}>
+                    <span>The Most</span>
                     <br />
-                    over 175 billion parameters.
-                  </p>
-                  <p>
-                    Each Astro’s goal is to be your own unique personal
-                    <br />
-                    assistant that will initially answer all of your questions
-                    <br />
-                    and chat with you but will later also help you learn,
-                    <br /> and assist you with your everyday tasks.
-                  </p>
+                    <span className={classes.mainTitleRed}>
+                      advanced AI bots
+                    </span>
+                  </div>
+                  <div className={classes.mainText}>
+                    <p>
+                      Powered by Open AI’s GPT-3, Astro Bots are able to
+                      <br /> give you fast and advanced answers to your
+                      <br /> questions while having fun and very deep
+                      <br /> conversations.
+                    </p>
+                    <p>
+                      Open AI was founded by Elon Musk and GPT-3 is
+                      <br /> the most advanced language generator, trained with
+                      <br />
+                      over 175 billion parameters.
+                    </p>
+                    <p>
+                      Each Astro’s goal is to be your own unique personal
+                      <br />
+                      assistant that will initially answer all of your questions
+                      <br />
+                      and chat with you but will later also help you learn,
+                      <br /> and assist you with your everyday tasks.
+                    </p>
+                  </div>
                 </div>
               </Grid>
               <Grid item xs={12} sm={6}>

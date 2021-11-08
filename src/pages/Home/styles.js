@@ -27,17 +27,16 @@ const useStyles = makeStyles((theme) => ({
   },
   welcomeWrapper: {
     backgroundColor: "#ecebeb",
-    fontSize: 18,
+    fontSize: 22,
     padding: "10px 25px",
     position: "absolute",
-    width: 150,
     top: "35%",
-    right: 20,
-    borderRadius: 10,
+    right: 0,
+    borderRadius: 25,
+    borderBottomLeftRadius: 0,
     [theme.breakpoints.down("sm")]: {
       position: "relative",
       top: -20,
-      right: 0,
       left: 0,
       margin: "0 auto",
     },
@@ -54,7 +53,14 @@ const useStyles = makeStyles((theme) => ({
     padding: "50px 0",
     backgroundColor: "#000000",
   },
+  sectionTwoContent: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    height: "100%"
+  },
   mainTitle: {
+    fontFamily: "Helvetica Neue",
     fontWeight: "bold",
     fontSize: 30,
     color: "white",
@@ -92,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     textAlign: "center",
     fontSize: 25,
+    fontFamily: "Helvetica Neue",
     fontWeight: "bold",
     maxWidth: "80%",
     marginBottom: 20,
@@ -135,6 +142,7 @@ const useStyles = makeStyles((theme) => ({
   },
   progressItemText: {
     fontSize: 18,
+    fontFamily: "Helvetica Neue",
     fontWeight: "bold",
     color: "white",
     paddingRight: 20,
@@ -154,6 +162,7 @@ const useStyles = makeStyles((theme) => ({
   sectionFourTitle: {
     color: "white",
     textTransform: "uppercase",
+    fontFamily: "Helvetica Neue",
     fontSize: 30,
     fontWeight: "bold",
   },
@@ -188,6 +197,7 @@ const useStyles = makeStyles((theme) => ({
   joinTitle: {
     color: "white",
     textTransform: "uppercase",
+    fontFamily: "Helvetica Neue",
     fontSize: 30,
     fontWeight: "bold",
     marginTop: 30,

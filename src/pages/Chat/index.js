@@ -8,7 +8,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
 
-import RedRobot from "../../assets/android-red.png";
+import RedRobot from "../../assets/images/android-red.png";
 import useStyles from "./styles";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
