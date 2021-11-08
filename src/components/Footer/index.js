@@ -29,7 +29,7 @@ const Footer = () => {
           <TwitterIcon sx={{color: 'white', fontSize: 40}} />
         </div>
         <div className={classes.iconsItem}>
-          <OpenSeaIcon color="white" width="40" height="30" />
+          <OpenSeaIcon color="white" width="32" height="32" />
         </div>
       </div>
       <Typography variant="body2" color="#ABABAB" align="center">
