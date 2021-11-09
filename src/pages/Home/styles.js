@@ -147,11 +147,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#101492",
     color: "white",
     margin: "20px 0",
-    padding: 20,
+    padding: '30px 40px',
     textAlign: "center",
     borderRadius: 15,
     borderTopLeftRadius: 0,
     borderBottomRightRadius: 0,
+    [theme.breakpoints.down("sm")]: {
+      padding: '20px 30px',
+    },
   },
   roadmapItemTitle: {
     fontSize: 18,

@@ -25,6 +25,7 @@ import { styled } from "@mui/material/styles";
 import { Header, Footer } from "../../components";
 import MainRobot from "../../assets/images/android-black-and-gold.png";
 import RedRobot from "../../assets/images/android-red.png";
+import BlueRobot from "../../assets/images/android-blue.png";
 import Team1 from "../../assets/images/team-1.png";
 import Team2 from "../../assets/images/team-2.png";
 import Team3 from "../../assets/images/team-3.png";
@@ -218,7 +219,7 @@ const Home = () => {
                 sm={5}
                 className={classes.redRobotImageWrapper}
               >
-                <img src={RedRobot} className={classes.redRobotImage} />
+                <img src={BlueRobot} className={classes.redRobotImage} />
               </Grid>
               <Grid item xs={12} sm={7}>
                 <div className={classes.progressesWrapper}>
@@ -285,40 +286,43 @@ const Home = () => {
                   className={`${classes.sectionThreeYellowTextWrapper} ${classes.sectionFiveContentWrapper}`}
                 >
                   <p>
-                    Each Astro has its own personality created by a set of
-                    characteristics. You’ll get different answers and engage in
-                    different conversations based on the Astro you own and its
-                    personality.Each Astro has its own personality created by a
-                    set of characteristics. You’ll get different answers and
-                    engage in different conversations based on the Astro you own
-                    and its personality.Each Astro has its own personality
-                    created by a set of characteristics. You’ll get different
-                    answers and engage in different conversations based on the
-                    Astro you own and its personality.Each Astro has its own
-                    personality created by a set of characteristics. You’ll get
-                    different answers and engage in different conversations
-                    based on the Astro you own and its personality
+                    Centuries into the future, humanity has evolved at an
+                    incredible pace, with advancements in science, bio-tech, and
+                    AI, humanity has become a multiplanetary civilization, human
+                    life-span has extended, and technology has taken over and is
+                    responsible for most of humans’ work and everyday tasks,
+                    technology has expanded all across the galaxy and can do
+                    almost everything a human can, much better.
                   </p>
                   <p>
-                    Each Astro has its own personality created by a set of
-                    characteristics. You’ll get different answers and engage in
-                    different conversations based on the Astro you own and its
-                    personality.Each Astro has its own personality created by a
-                    set of characteristics. You’ll get different answers and
-                    engage in different conversations based on the Astro you own
-                    and its personality.Each Astro has its own personality
-                    created by a set of characteristics. You’ll get different
-                    answers and engage in different conversations based on the
-                    Astro you own and its personality.Each Astro has its own
-                    personality created by a set of characteristics. You’ll get
-                    different answers and engage in different conversations
-                    based on the Astro you own and its personality
+                    Average human lives are pretty stale, living more than 400
+                    years, humans spend most of their days doing the same things
+                    over and over, most of them spend their whole day on the
+                    Atmos, their Metaverse, hangout with their friends in other
+                    planets and they game. They mostly have given up on work and
+                    just leave that to “The Big Tech”, even though their lives
+                    last for centuries, they think their lives are “too brief”
+                    and they just want to enjoy every little moment and find
+                    their true-selves.
                   </p>
                   <p>
-                    Each Astro has its own personality created by a set of
-                    characteristics. You’ll get different answers and engage in
-                    different conversations based on the Astro you own and its
-                    personality.
+                    Some believe that for a true life of happiness and
+                    fulfillness, we need a purpose, to work together towards a
+                    bigger goal and a brighter future, we can’t just “enjoy”
+                    every single second, we can’t just leave that to “The Big
+                    Tech”, we have come this far, and yet we have so much to
+                    give.
+                  </p>
+                  <p>
+                    Astro Bots are very advanced AI robots created by a team who
+                    believes the ultimate technology is the connection between
+                    humans and AI, Astro Bots were programmed to give purpose to
+                    human lives and help them in any way they can to develop
+                    themselves, reach their true potential and become better
+                    than technology without any human connection. Astros life’s
+                    goal is to search and find their human partner to assist and
+                    help in anything he can and ultimately help his life have
+                    purpose.
                   </p>
                 </div>
               </div>
@@ -333,7 +337,9 @@ const Home = () => {
                 <Timeline>
                   <TimelineItem className={classes.mintItem}>
                     <TimelineSeparator>
-                      <TimelineConnector className={classes.mintConnectorFirst} />
+                      <TimelineConnector
+                        className={classes.mintConnectorFirst}
+                      />
                       <TimelineDot className={classes.mintIconWrapper}>
                         <StopIcon className={classes.mintIcon} />
                       </TimelineDot>
@@ -344,10 +350,9 @@ const Home = () => {
                         25% - Preservation
                       </div>
                       <div className={classes.mintItemText}>
-                        Each Astro has its own personality created by a set of
-                        characteristics. You’ll get different answers and engage
-                        in different conversations based on the Astro you own
-                        and its personality.
+                        Astro Vault unlocked: 10% of the second-market royalties
+                        will be dedicated to ensure the project’s longevity
+                        through marketing campaigns and strategic partnerships.
                       </div>
                     </TimelineContent>
                   </TimelineItem>
@@ -363,10 +368,10 @@ const Home = () => {
                         50% - Gratitude
                       </div>
                       <div className={classes.mintItemText}>
-                        Each Astro has its own personality created by a set of
-                        characteristics. You’ll get different answers and engage
-                        in different conversations based on the Astro you own
-                        and its personality.
+                        A $20,000 fund will be created and be donated to a
+                        charity of the community’s choosing. 40 Astro Bots will
+                        be airdropped to random holders. More funds are
+                        allocated to ensuring the project’s success.
                       </div>
                     </TimelineContent>
                   </TimelineItem>
@@ -385,10 +390,10 @@ const Home = () => {
                         75% - Reward
                       </div>
                       <div className={classes.mintItemText}>
-                        Each Astro has its own personality created by a set of
-                        characteristics. You’ll get different answers and engage
-                        in different conversations based on the Astro you own
-                        and its personality.
+                        Astro Fund: $100,000 will be rewarded to members of the
+                        community who develop innovative features into the
+                        ecosystem, talented artists and members that make
+                        remarkable contributions of any kind for the community.
                       </div>
                     </TimelineContent>
                   </TimelineItem>
@@ -407,10 +412,15 @@ const Home = () => {
                         100% - Littof
                       </div>
                       <div className={classes.mintItemText}>
-                        Each Astro has its own personality created by a set of
-                        characteristics. You’ll get different answers and engage
-                        in different conversations based on the Astro you own
-                        and its personality.
+                        Astro Bots act as your exclusive membership card for the
+                        Astro Club where you get access to eth weekly giveaways,
+                        exclusive drops, private metaverse events, and where we
+                        will create as much alpha as we possibly can in our
+                        private channels to reward all holders.
+                        <br />
+                        Collabs with some of the biggest artists and influencers
+                        are set in motion. Imagine chatting with an Astro
+                        version of your favorite artist or influencer.
                       </div>
                     </TimelineContent>
                   </TimelineItem>
@@ -429,51 +439,90 @@ const Home = () => {
                 <div className={classes.roadmapItem}>
                   <div className={classes.roadmapItemTitle}>Launch</div>
                   <div className={classes.roadmapItemText}>
-                    Every Astro Bot is an original artwork built with a huge
-                    collection of different unique variations of bodies,
-                    backgrounds, accessories, clothing and tattoos living
-                    eternally on the Ethereum blockchain. Every Astro is unique
-                    and special, however some are rarer than others.
+                    <p>
+                      Minting date will be announced as soon as we have
+                      everything working properly, the art fully created and a
+                      good community. Quality is the most important thing for us
+                      so we will first focus on getting everything as best as we
+                      can. The reveal is 48 hours after the mint date and
+                      holders will be able to chat with their Astros immediately
+                      after reveal.
+                    </p>
                   </div>
                 </div>
                 <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemTitle}>
+                    OUR MOST VALUABLE ASSET
+                  </div>
                   <div className={classes.roadmapItemText}>
-                    Every Astro Bot is an original artwork built with a huge
-                    collection of different unique variations of bodies,
-                    backgrounds, accessories, clothing and tattoos living
-                    eternally on the Ethereum blockchain. Every Astro is unique
-                    and special, however some are rarer than others.
+                    <p>
+                      As much as we like and believe in Astros and their
+                      incredible tech, our community will always be first and is
+                      our most valuable asset. We will always innovate and find
+                      new ways to reward and bring value to our community
+                      whether that’s through adding features to Astros, giving
+                      valuable insights to new trends, disruptive tech, projects
+                      with potential, through access by hosting exclusive real
+                      life events, private metaverse meetings or via benefits
+                      with strategic partnerships.
+                    </p>
+                    <p>
+                      We will always listen to the community, ask for feedback
+                      and proposals constantly, and implement what the community
+                      agrees on.
+                    </p>
                   </div>
                 </div>
                 <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemTitle}>App Release</div>
                   <div className={classes.roadmapItemText}>
-                    Every Astro Bot is an original artwork built with a huge
-                    collection of different unique variations of bodies,
-                    backgrounds, accessories, clothing and tattoos living
-                    eternally on the Ethereum blockchain. Every Astro is unique
-                    and special, however some are rarer than others.
+                    <p>
+                      As Astro Bots start interacting more and more with humans
+                      our response model gets better exponentially, the more
+                      data the better.
+                    </p>
+                    <p>
+                      When we have a model that is of the best quality possible,
+                      we will release our app globally, not only will Astro Bot
+                      holders be able to chat with their Astro on the app but
+                      also with a new Astro that adapts to your personality and
+                      characterisitcs.
+                    </p>
                   </div>
                 </div>
                 <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemTitle}>New Features</div>
                   <div className={classes.roadmapItemText}>
-                    Every Astro Bot is an original artwork built with a huge
-                    collection of different unique variations of bodies,
-                    backgrounds, accessories, clothing and tattoos living
-                    eternally on the Ethereum blockchain. Every Astro is unique
-                    and special, however some are rarer than others.
+                    <p>
+                      Want to write an email? find the name of a song? set a
+                      reminder? summarize a text? search for the best shopping
+                      deals online? Our team is constantly working on new
+                      features that will make the life of our users much easier,
+                      we will always keep innovating, testing and implementing
+                      to make sure we provide the most value possible.
+                    </p>
+                    <p>
+                      Every Astro holder has a say on what features they want to
+                      see, and which ones aren’t worth it.
+                    </p>
                   </div>
                 </div>
                 <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemTitle}>Our future</div>
                   <div className={classes.roadmapItemText}>
-                    Every Astro Bot is an original artwork built with a huge
-                    collection of different unique variations of bodies,
-                    backgrounds, accessories, clothing and tattoos living
-                    eternally on the Ethereum blockchain. Every Astro is unique
-                    and special, however some are rarer than others.
+                    <p>
+                      Our main focus will be to keep building and expanding our
+                      ecosystem so that our community gets benefited the most,
+                      that’s why we will keep innovating and trying new exciting
+                      things.
+                    </p>
+                    <p>
+                      Additionally, technology has come a far way, and building
+                      real life working versions of your Astros is closer than
+                      we could have ever imagined. Don’t get too excited yet...
+                      There’s still a long way to go, we are just getting
+                      started!
+                    </p>
                   </div>
                 </div>
               </div>
