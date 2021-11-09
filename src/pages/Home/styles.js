@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
   welcomeWrapper: {
     backgroundColor: "#ecebeb",
-    fontSize: 22,
-    padding: "10px 25px",
+    fontSize: 20,
+    padding: "6px 14px",
     position: "absolute",
     top: "35%",
-    right: 0,
+    right: "5%",
     borderRadius: 25,
     borderBottomLeftRadius: 0,
     [theme.breakpoints.down("sm")]: {
@@ -89,10 +89,75 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     padding: "50px 0",
+    width: "100%",
     [theme.breakpoints.down("sm")]: {
       padding: "0",
       paddingBottom: "20px"
     },
+  },
+  sectionThreeTitleWrapperBig: {
+    padding: "100px 0 50px"
+  },
+  sectionThreeTitleRoadmap: {
+    paddingBottom: 0
+  },
+  mintWrapper: {
+    color: "white",
+    maxWidth: 900,
+    margin: '0 auto',
+  },
+  mintItem: {
+    '&:before': {
+      display: "none",
+    }
+  },
+  mintConnectorFirst: {
+    position: "absolute",
+    height: 30,
+    top: -10
+  },
+  mintConnector: {
+    margin: "-15px 0"
+  },
+  mintIconWrapper: {
+    backgroundColor: "transparent!important",
+    margin: '0!important'
+  },
+  mintIcon: {
+    transform: "rotate(45deg)",
+    color: "#0063ff",
+  },
+  mintItemTitle: {
+    color: "#0063ff",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  mintItemText: {
+    padding: "20px 0",
+    color: "rgb(255 255 255 / 50%)",
+    fontSize: 14
+  },
+  roadmapWrapper: {
+    maxWidth: 900,
+    display: "flex",
+    flexDirection: "column",
+    margin: '0 auto'
+  },
+  roadmapItem: {
+    backgroundColor: "#101492",
+    color: "white",
+    margin: "20px 0",
+    padding: 20,
+    textAlign: "center",
+    borderRadius: 15,
+    borderTopLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
+  roadmapItemTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    marginBottom: 10,
   },
   sectionThreeTitle: {
     textTransform: "uppercase",
@@ -106,12 +171,19 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: "100%",
     },
   },
+  sectionThreeTitleYellow: {
+    color: "#ffc500"
+  },
   sectionThreeSubTitle: {
     maxWidth: "80%",
     fontSize: 14,
     [theme.breakpoints.down("sm")]: {
       maxWidth: "100%",
     },
+  },
+  sectionThreeYellowTextWrapper: {
+    textAlign: "center",
+    color: "#ffc500"
   },
   itemImage: {
     padding: 20,
@@ -130,6 +202,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     padding: "50px",
+    height: "100%",
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
       paddingTop: 20
@@ -215,6 +288,19 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginBottom: '30px!important'
     },
+  },
+  joinImageWrapper: {
+    position: "relative"
+  },
+  joinUsText: {
+    backgroundColor: "#d8d8d8",
+    fontSize: 16,
+    padding: "6px 14px",
+    position: "absolute",
+    top: "22%",
+    right: -20,
+    borderRadius: 10,
+    borderBottomLeftRadius: 0,
   }
 }));
 

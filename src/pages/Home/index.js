@@ -12,6 +12,13 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
+import StopIcon from "@mui/icons-material/Stop";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 
@@ -104,7 +111,7 @@ const Home = () => {
           <div className={classes.robotWrapper}>
             <Zoom
               in={motion}
-              style={{ transitionDelay: motion ? "1300ms" : "0ms" }}
+              style={{ transitionDelay: motion ? "500ms" : "0ms" }}
             >
               <div className={classes.welcomeWrapper}>Welcome</div>
             </Zoom>
@@ -192,7 +199,9 @@ const Home = () => {
           </Container>
           <Container>
             <Grid container>
-              <div className={classes.sectionThreeTitleWrapper}>
+              <div
+                className={`${classes.sectionThreeTitleWrapper} ${classes.sectionThreeTitleWrapperBig}`}
+              >
                 <div className={classes.sectionThreeTitle}>Personality</div>
                 <div className={classes.sectionThreeSubTitle}>
                   Each Astro has its own personality created by a set of
@@ -264,6 +273,212 @@ const Home = () => {
                 </div>
               </Grid>
             </Grid>
+            {/* Story Start */}
+            <Grid container>
+              <div className={classes.sectionThreeTitleWrapper}>
+                <div
+                  className={`${classes.sectionThreeTitle} ${classes.sectionThreeTitleYellow}`}
+                >
+                  The Story
+                </div>
+                <div
+                  className={`${classes.sectionThreeYellowTextWrapper} ${classes.sectionFiveContentWrapper}`}
+                >
+                  <p>
+                    Each Astro has its own personality created by a set of
+                    characteristics. You’ll get different answers and engage in
+                    different conversations based on the Astro you own and its
+                    personality.Each Astro has its own personality created by a
+                    set of characteristics. You’ll get different answers and
+                    engage in different conversations based on the Astro you own
+                    and its personality.Each Astro has its own personality
+                    created by a set of characteristics. You’ll get different
+                    answers and engage in different conversations based on the
+                    Astro you own and its personality.Each Astro has its own
+                    personality created by a set of characteristics. You’ll get
+                    different answers and engage in different conversations
+                    based on the Astro you own and its personality
+                  </p>
+                  <p>
+                    Each Astro has its own personality created by a set of
+                    characteristics. You’ll get different answers and engage in
+                    different conversations based on the Astro you own and its
+                    personality.Each Astro has its own personality created by a
+                    set of characteristics. You’ll get different answers and
+                    engage in different conversations based on the Astro you own
+                    and its personality.Each Astro has its own personality
+                    created by a set of characteristics. You’ll get different
+                    answers and engage in different conversations based on the
+                    Astro you own and its personality.Each Astro has its own
+                    personality created by a set of characteristics. You’ll get
+                    different answers and engage in different conversations
+                    based on the Astro you own and its personality
+                  </p>
+                  <p>
+                    Each Astro has its own personality created by a set of
+                    characteristics. You’ll get different answers and engage in
+                    different conversations based on the Astro you own and its
+                    personality.
+                  </p>
+                </div>
+              </div>
+            </Grid>
+            {/* Story End */}
+            {/* Mint Map */}
+            <Grid container>
+              <div className={classes.sectionThreeTitleWrapper}>
+                <div className={classes.sectionThreeTitle}>Mint Map</div>
+              </div>
+              <div className={classes.mintWrapper}>
+                <Timeline>
+                  <TimelineItem className={classes.mintItem}>
+                    <TimelineSeparator>
+                      <TimelineConnector className={classes.mintConnectorFirst} />
+                      <TimelineDot className={classes.mintIconWrapper}>
+                        <StopIcon className={classes.mintIcon} />
+                      </TimelineDot>
+                      <TimelineConnector className={classes.mintConnector} />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      <div className={classes.mintItemTitle}>
+                        25% - Preservation
+                      </div>
+                      <div className={classes.mintItemText}>
+                        Each Astro has its own personality created by a set of
+                        characteristics. You’ll get different answers and engage
+                        in different conversations based on the Astro you own
+                        and its personality.
+                      </div>
+                    </TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem className={classes.mintItem}>
+                    <TimelineSeparator>
+                      <TimelineDot className={classes.mintIconWrapper}>
+                        <StopIcon className={classes.mintIcon} />
+                      </TimelineDot>
+                      <TimelineConnector className={classes.mintConnector} />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      <div className={classes.mintItemTitle}>
+                        50% - Gratitude
+                      </div>
+                      <div className={classes.mintItemText}>
+                        Each Astro has its own personality created by a set of
+                        characteristics. You’ll get different answers and engage
+                        in different conversations based on the Astro you own
+                        and its personality.
+                      </div>
+                    </TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem className={classes.mintItem}>
+                    <TimelineSeparator>
+                      <TimelineDot className={classes.mintIconWrapper}>
+                        <StopIcon className={classes.mintIcon} />
+                      </TimelineDot>
+                      <TimelineConnector className={classes.mintConnector} />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      <div
+                        className={classes.mintItemTitle}
+                        style={{ color: "#6c00ff" }}
+                      >
+                        75% - Reward
+                      </div>
+                      <div className={classes.mintItemText}>
+                        Each Astro has its own personality created by a set of
+                        characteristics. You’ll get different answers and engage
+                        in different conversations based on the Astro you own
+                        and its personality.
+                      </div>
+                    </TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem className={classes.mintItem}>
+                    <TimelineSeparator>
+                      <TimelineDot className={classes.mintIconWrapper}>
+                        <StopIcon className={classes.mintIcon} />
+                      </TimelineDot>
+                      <TimelineConnector className={classes.mintConnector} />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      <div
+                        className={classes.mintItemTitle}
+                        style={{ color: "#8d17f2" }}
+                      >
+                        100% - Littof
+                      </div>
+                      <div className={classes.mintItemText}>
+                        Each Astro has its own personality created by a set of
+                        characteristics. You’ll get different answers and engage
+                        in different conversations based on the Astro you own
+                        and its personality.
+                      </div>
+                    </TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </Grid>
+            {/* Mint Map End */}
+            {/* Roadmap start */}
+            <Grid container id="roadmap">
+              <div
+                className={`${classes.sectionThreeTitleWrapper} ${classes.sectionThreeTitleRoadmap}`}
+              >
+                <div className={classes.sectionThreeTitle}>Roadmap</div>
+              </div>
+              <div className={classes.roadmapWrapper}>
+                <div className={classes.roadmapItem}>
+                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemText}>
+                    Every Astro Bot is an original artwork built with a huge
+                    collection of different unique variations of bodies,
+                    backgrounds, accessories, clothing and tattoos living
+                    eternally on the Ethereum blockchain. Every Astro is unique
+                    and special, however some are rarer than others.
+                  </div>
+                </div>
+                <div className={classes.roadmapItem}>
+                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemText}>
+                    Every Astro Bot is an original artwork built with a huge
+                    collection of different unique variations of bodies,
+                    backgrounds, accessories, clothing and tattoos living
+                    eternally on the Ethereum blockchain. Every Astro is unique
+                    and special, however some are rarer than others.
+                  </div>
+                </div>
+                <div className={classes.roadmapItem}>
+                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemText}>
+                    Every Astro Bot is an original artwork built with a huge
+                    collection of different unique variations of bodies,
+                    backgrounds, accessories, clothing and tattoos living
+                    eternally on the Ethereum blockchain. Every Astro is unique
+                    and special, however some are rarer than others.
+                  </div>
+                </div>
+                <div className={classes.roadmapItem}>
+                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemText}>
+                    Every Astro Bot is an original artwork built with a huge
+                    collection of different unique variations of bodies,
+                    backgrounds, accessories, clothing and tattoos living
+                    eternally on the Ethereum blockchain. Every Astro is unique
+                    and special, however some are rarer than others.
+                  </div>
+                </div>
+                <div className={classes.roadmapItem}>
+                  <div className={classes.roadmapItemTitle}>Launch</div>
+                  <div className={classes.roadmapItemText}>
+                    Every Astro Bot is an original artwork built with a huge
+                    collection of different unique variations of bodies,
+                    backgrounds, accessories, clothing and tattoos living
+                    eternally on the Ethereum blockchain. Every Astro is unique
+                    and special, however some are rarer than others.
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            {/* Roadmap end */}
           </Container>
         </section>
         <section id="about" className={classes.sectionFour}>
@@ -440,7 +655,10 @@ const Home = () => {
                       </Button>
                     </Grid>
                     <Grid item sx={12} sm={4}>
-                      <img src={Team4} className={classes.itemTeamImage} />
+                      <div className={classes.joinImageWrapper}>
+                        <img src={Team4} className={classes.itemTeamImage} />
+                        <div className={classes.joinUsText}>join us!</div>
+                      </div>
                     </Grid>
                   </Grid>
                 </div>

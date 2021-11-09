@@ -19,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   logoImageLetter: {
-    maxWidth: 60,
-    marginRight: 20
+    maxWidth: 40,
+    marginRight: 10
   },
   logoImageText: {
-    maxWidth: 200
+    maxWidth: 150
   },
   navWrapper: {
     display: 'flex',
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: 'black',
     outline: 'none',
-    fontSize: 22,
+    fontSize: 18,
     "&:hover": {
       textDecoration: "underline"
     }
@@ -87,7 +87,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '0!important',
     textTransform: "capitalize!important",
     fontSize: "18px!important",
-    height: "40px!important"
+    height: "40px!important",
+    fontWeight: "300!important",
   },
 }))
 
