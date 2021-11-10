@@ -1,95 +1,96 @@
 /* import external modules */
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    backgroundColor: '#d0cece!important',
+    backgroundColor: "#d0cece!important",
   },
   headerWrapper: {
     paddingTop: 40,
     paddingBottom: 40,
+    alignItems: "center",
   },
   logoWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
-      margin: '5px 0!important'
-    }
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "center",
+      margin: "5px 0!important",
+    },
   },
   logoImageLetter: {
     maxWidth: 40,
-    marginRight: 10
+    marginRight: 10,
   },
   logoImageText: {
-    maxWidth: 150
+    maxWidth: 150,
   },
   navWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
-      margin: '20px 0!important'
-    }
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "center",
+      margin: "20px 0!important",
+    },
   },
   topMenu: {
-    display: 'flex',
-    flexDirection: 'row',
-    listStyle: 'none',
+    display: "flex",
+    flexDirection: "row",
+    listStyle: "none",
     margin: 0,
     padding: 0,
   },
   topMenuItem: {
-    padding: '0 20px'
+    padding: "0 20px",
   },
   topMenuItemLink: {
     textTransform: "uppercase",
     textDecoration: "none",
-    color: 'black',
-    outline: 'none',
+    color: "black",
+    outline: "none",
     fontSize: 18,
     "&:hover": {
-      textDecoration: "underline"
-    }
+      textDecoration: "underline",
+    },
   },
   iconsWrapper: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
-      margin: '5px 0!important'
-    }
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "center",
+      margin: "5px 0!important",
+    },
   },
   icons: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: 10
+    display: "flex",
+    alignItems: "center",
+    marginTop: 10,
   },
   iconsItem: {
-    padding: '0 10px'
+    padding: "0 10px",
   },
   buttonWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
-      margin: '5px 0!important'
-    }
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "center",
+      margin: "5px 0!important",
+    },
   },
   connectButton: {
-    backgroundColor: 'black!important',
-    borderRadius: '0!important',
+    backgroundColor: "black!important",
+    borderRadius: "0!important",
     textTransform: "capitalize!important",
     fontSize: "18px!important",
     height: "40px!important",
     fontWeight: "300!important",
   },
-}))
+}));
 
-export default useStyles
+export default useStyles;

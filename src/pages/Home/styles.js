@@ -2,8 +2,9 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
-  sectionOne: {
+  sectionGray: {
     backgroundColor: "#d0cece",
+    margin: "-1px 0",
     height: "95vh",
     width: "100%",
     display: "flex",
@@ -28,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
   welcomeWrapper: {
     backgroundColor: "#ecebeb",
     fontSize: 20,
-    padding: "6px 14px",
+    padding: "8px 25px",
     position: "absolute",
     top: "35%",
-    right: "5%",
+    right: "4%",
     borderRadius: 25,
     borderBottomLeftRadius: 0,
     [theme.breakpoints.down("sm")]: {
@@ -49,15 +50,34 @@ const useStyles = makeStyles((theme) => ({
       margin: "0 auto",
     },
   },
-  sectionTwo: {
+  sectionWrapper: {
+    margin: "-1px 0",
     padding: "50px 0",
+    [theme.breakpoints.down("sm")]: {
+      padding: "20px 0",
+    },
+  },
+  sectionSmallWrapper: {
+    maxWidth: 900,
+    width: "100%",
+    margin: "0 auto",
+  },
+  sectionBlack: {
     backgroundColor: "#000000",
+  },
+  sectionDarkBlue: {
+    backgroundColor: "#08051d",
   },
   sectionTwoContent: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    height: "100%"
+    height: "100%",
+  },
+  mainTitleWrapper: {
+    width: "100%",
+    textAlign: "center",
+    marginBottom: 30,
   },
   mainTitle: {
     fontFamily: "Helvetica Neue",
@@ -66,62 +86,39 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     textTransform: "uppercase",
   },
-  mainTitleRed: {
+  textWhite: {
+    color: "white",
+  },
+  textRed: {
     color: "#d10000",
   },
-  mainText: {
-    color: "white",
+  textYellow: {
+    color: "#ffc500",
+  },
+  textStory: {
+    textAlign: "center",
+    fotnStyle: "italic"
   },
   redRobotImage: {
     maxWidth: 500,
     width: "100%",
   },
-  sectionThree: {
-    backgroundColor: "#000000",
-    padding: "50px 0",
-    [theme.breakpoints.down("sm")]: {
-      padding: "30px 0",
-    },
-  },
-  sectionThreeTitleWrapper: {
-    color: "white",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "50px 0",
-    width: "100%",
-    [theme.breakpoints.down("sm")]: {
-      padding: "0",
-      paddingBottom: "20px"
-    },
-  },
-  sectionThreeTitleWrapperBig: {
-    padding: "100px 0 50px"
-  },
-  sectionThreeTitleRoadmap: {
-    paddingBottom: 0
-  },
-  mintWrapper: {
-    color: "white",
-    maxWidth: 900,
-    margin: '0 auto',
-  },
   mintItem: {
-    '&:before': {
+    "&:before": {
       display: "none",
-    }
+    },
   },
   mintConnectorFirst: {
     position: "absolute",
     height: 30,
-    top: -10
+    top: -10,
   },
   mintConnector: {
-    margin: "-15px 0"
+    margin: "-15px 0",
   },
   mintIconWrapper: {
     backgroundColor: "transparent!important",
-    margin: '0!important'
+    margin: "0!important",
   },
   mintIcon: {
     transform: "rotate(45deg)",
@@ -135,25 +132,19 @@ const useStyles = makeStyles((theme) => ({
   mintItemText: {
     padding: "20px 0",
     color: "rgb(255 255 255 / 50%)",
-    fontSize: 14
-  },
-  roadmapWrapper: {
-    maxWidth: 900,
-    display: "flex",
-    flexDirection: "column",
-    margin: '0 auto'
+    fontSize: 14,
   },
   roadmapItem: {
     backgroundColor: "#101492",
     color: "white",
     margin: "20px 0",
-    padding: '30px 40px',
+    padding: "30px 40px",
     textAlign: "center",
     borderRadius: 15,
     borderTopLeftRadius: 0,
     borderBottomRightRadius: 0,
     [theme.breakpoints.down("sm")]: {
-      padding: '20px 30px',
+      padding: "20px 30px",
     },
   },
   roadmapItemTitle: {
@@ -161,32 +152,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     textTransform: "uppercase",
     marginBottom: 10,
-  },
-  sectionThreeTitle: {
-    textTransform: "uppercase",
-    textAlign: "center",
-    fontSize: 25,
-    fontFamily: "Helvetica Neue",
-    fontWeight: "bold",
-    maxWidth: "80%",
-    marginBottom: 20,
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "100%",
-    },
-  },
-  sectionThreeTitleYellow: {
-    color: "#ffc500"
-  },
-  sectionThreeSubTitle: {
-    maxWidth: "80%",
-    fontSize: 14,
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "100%",
-    },
-  },
-  sectionThreeYellowTextWrapper: {
-    textAlign: "center",
-    color: "#ffc500"
   },
   itemImage: {
     padding: 20,
@@ -208,7 +173,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
-      paddingTop: 20
+      paddingTop: 20,
     },
   },
   progressItem: {
@@ -222,25 +187,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: "white",
     paddingRight: 20,
+    maxWidth: 100,
+    width: '100%'
   },
   progressItemProgress: {
     width: "100%",
-  },
-  sectionFour: {
-    backgroundColor: '#08051d',
-    padding: "50px 0",
-  },
-  sectionFourTitleWrapper: {
-    width: "100%",
-    textAlign: "center",
-    marginBottom: 30
-  },
-  sectionFourTitle: {
-    color: "white",
-    textTransform: "uppercase",
-    fontFamily: "Helvetica Neue",
-    fontSize: 30,
-    fontWeight: "bold",
   },
   itemTeamImage: {
     width: "100%",
@@ -256,44 +207,28 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontSize: 22,
   },
-  sectionFive: {
-    backgroundColor: '#000000',
-    padding: "50px 0",
-  },
-  sectionFiveContentWrapper: {
-    maxWidth: 900,
-    width: '100%',
-    margin: '0 auto'
-  },
-  joinContentWrapper: {
-    maxWidth: 900,
-    width: '100%',
-    margin: '60px auto',
+  faqItemTitle: {
+    fontWeight: "bold!important",
   },
   joinTitle: {
-    color: "white",
-    textTransform: "uppercase",
-    fontFamily: "Helvetica Neue",
-    fontSize: 30,
-    fontWeight: "bold",
     marginTop: 30,
     [theme.breakpoints.down("sm")]: {
-      marginTop: '0px!important',
+      marginTop: "0px!important",
     },
   },
   joinText: {
     color: "white",
     fontSize: 16,
-    margin: '30px 0'
+    margin: "30px 0",
   },
   joinButton: {
-    borderRadius: '0!important',
+    borderRadius: "0!important",
     [theme.breakpoints.down("sm")]: {
-      marginBottom: '30px!important'
+      marginBottom: "30px!important",
     },
   },
   joinImageWrapper: {
-    position: "relative"
+    position: "relative",
   },
   joinUsText: {
     backgroundColor: "#d8d8d8",
@@ -304,7 +239,7 @@ const useStyles = makeStyles((theme) => ({
     right: -20,
     borderRadius: 10,
     borderBottomLeftRadius: 0,
-  }
+  },
 }));
 
 export default useStyles;

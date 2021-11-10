@@ -26,6 +26,10 @@ import { Header, Footer } from "../../components";
 import MainRobot from "../../assets/images/android-black-and-gold.png";
 import RedRobot from "../../assets/images/android-red.png";
 import BlueRobot from "../../assets/images/android-blue.png";
+import GoldRobot from "../../assets/images/android-gold.png";
+import GrayRobot from "../../assets/images/android-gray.png";
+import VioletRobot from "../../assets/images/android-violet.png";
+import JoinRobot from "../../assets/images/android-join.png";
 import Team1 from "../../assets/images/team-1.png";
 import Team2 from "../../assets/images/team-2.png";
 import Team3 from "../../assets/images/team-3.png";
@@ -108,7 +112,7 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <section className={classes.sectionOne}>
+        <section className={classes.sectionGray}>
           <div className={classes.robotWrapper}>
             <Zoom
               in={motion}
@@ -119,19 +123,19 @@ const Home = () => {
             <img src={MainRobot} className={classes.robotImage} />
           </div>
         </section>
-        <section className={classes.sectionTwo}>
-          <Container>
+
+        {/* The Most */}
+        <section className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
             <Grid container>
               <Grid item xs={12} sm={6}>
                 <div className={classes.sectionTwoContent}>
                   <div className={classes.mainTitle}>
                     <span>The Most</span>
                     <br />
-                    <span className={classes.mainTitleRed}>
-                      advanced AI bots
-                    </span>
+                    <span className={classes.textRed}>advanced AI bots</span>
                   </div>
-                  <div className={classes.mainText}>
+                  <div className={classes.textWhite}>
                     <p>
                       Powered by Open AI’s GPT-3, Astro Bots are able to
                       <br /> give you fast and advanced answers to your
@@ -163,53 +167,63 @@ const Home = () => {
             </Grid>
           </Container>
         </section>
-        <section className={classes.sectionThree}>
-          <Container>
-            <Grid container>
-              <div className={classes.sectionThreeTitleWrapper}>
-                <div className={classes.sectionThreeTitle}>
+
+        {/* Astro bots */}
+        <section className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
+            <Grid container className={classes.sectionSmallWrapper}>
+              <div className={classes.mainTitleWrapper}>
+                <div className={classes.mainTitle}>
                   Astro Bots is a collection of 8,888 original artworks of over
                   more than 10,000,000 possible variations
                 </div>
-                <div className={classes.sectionThreeSubTitle}>
+              </div>
+              <div className={classes.textWhite}>
+                <p>
                   Every Astro Bot is an original artwork built with a huge
                   collection of different unique variations of bodies,
                   backgrounds, accessories, clothing and tattoos living
                   eternally on the Ethereum blockchain. Every Astro is unique
                   and special, however some are rarer than others.
-                </div>
+                </p>
               </div>
             </Grid>
             <Grid container>
               <Grid item xs={12} sm={4}>
                 <div className={classes.itemImage}>
-                  <img src={RedRobot} className={classes.redRobotImage} />
+                  <img src={GoldRobot} className={classes.redRobotImage} />
                 </div>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <div className={`${classes.itemImage} ${classes.itemImageBig}`}>
-                  <img src={RedRobot} className={classes.redRobotImage} />
+                  <img src={GrayRobot} className={classes.redRobotImage} />
                 </div>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <div className={classes.itemImage}>
-                  <img src={RedRobot} className={classes.redRobotImage} />
+                  <img src={VioletRobot} className={classes.redRobotImage} />
                 </div>
               </Grid>
             </Grid>
           </Container>
-          <Container>
+        </section>
+
+        {/* Personality */}
+        <section className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
             <Grid container>
-              <div
-                className={`${classes.sectionThreeTitleWrapper} ${classes.sectionThreeTitleWrapperBig}`}
-              >
-                <div className={classes.sectionThreeTitle}>Personality</div>
-                <div className={classes.sectionThreeSubTitle}>
+              <div className={classes.mainTitleWrapper}>
+                <div className={classes.mainTitle}>Personality</div>
+              </div>
+            </Grid>
+            <Grid container className={classes.sectionSmallWrapper}>
+              <div className={classes.textWhite}>
+                <p>
                   Each Astro has its own personality created by a set of
                   characteristics. You’ll get different answers and engage in
                   different conversations based on the Astro you own and its
                   personality.
-                </div>
+                </p>
               </div>
             </Grid>
             <Grid container>
@@ -274,267 +288,269 @@ const Home = () => {
                 </div>
               </Grid>
             </Grid>
-            {/* Story Start */}
-            <Grid container>
-              <div className={classes.sectionThreeTitleWrapper}>
-                <div
-                  className={`${classes.sectionThreeTitle} ${classes.sectionThreeTitleYellow}`}
-                >
-                  The Story
-                </div>
-                <div
-                  className={`${classes.sectionThreeYellowTextWrapper} ${classes.sectionFiveContentWrapper}`}
-                >
-                  <p>
-                    Centuries into the future, humanity has evolved at an
-                    incredible pace, with advancements in science, bio-tech, and
-                    AI, humanity has become a multiplanetary civilization, human
-                    life-span has extended, and technology has taken over and is
-                    responsible for most of humans’ work and everyday tasks,
-                    technology has expanded all across the galaxy and can do
-                    almost everything a human can, much better.
-                  </p>
-                  <p>
-                    Average human lives are pretty stale, living more than 400
-                    years, humans spend most of their days doing the same things
-                    over and over, most of them spend their whole day on the
-                    Atmos, their Metaverse, hangout with their friends in other
-                    planets and they game. They mostly have given up on work and
-                    just leave that to “The Big Tech”, even though their lives
-                    last for centuries, they think their lives are “too brief”
-                    and they just want to enjoy every little moment and find
-                    their true-selves.
-                  </p>
-                  <p>
-                    Some believe that for a true life of happiness and
-                    fulfillness, we need a purpose, to work together towards a
-                    bigger goal and a brighter future, we can’t just “enjoy”
-                    every single second, we can’t just leave that to “The Big
-                    Tech”, we have come this far, and yet we have so much to
-                    give.
-                  </p>
-                  <p>
-                    Astro Bots are very advanced AI robots created by a team who
-                    believes the ultimate technology is the connection between
-                    humans and AI, Astro Bots were programmed to give purpose to
-                    human lives and help them in any way they can to develop
-                    themselves, reach their true potential and become better
-                    than technology without any human connection. Astros life’s
-                    goal is to search and find their human partner to assist and
-                    help in anything he can and ultimately help his life have
-                    purpose.
-                  </p>
-                </div>
-              </div>
-            </Grid>
-            {/* Story End */}
-            {/* Mint Map */}
-            <Grid container>
-              <div className={classes.sectionThreeTitleWrapper}>
-                <div className={classes.sectionThreeTitle}>Mint Map</div>
-              </div>
-              <div className={classes.mintWrapper}>
-                <Timeline>
-                  <TimelineItem className={classes.mintItem}>
-                    <TimelineSeparator>
-                      <TimelineConnector
-                        className={classes.mintConnectorFirst}
-                      />
-                      <TimelineDot className={classes.mintIconWrapper}>
-                        <StopIcon className={classes.mintIcon} />
-                      </TimelineDot>
-                      <TimelineConnector className={classes.mintConnector} />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <div className={classes.mintItemTitle}>
-                        25% - Preservation
-                      </div>
-                      <div className={classes.mintItemText}>
-                        Astro Vault unlocked: 10% of the second-market royalties
-                        will be dedicated to ensure the project’s longevity
-                        through marketing campaigns and strategic partnerships.
-                      </div>
-                    </TimelineContent>
-                  </TimelineItem>
-                  <TimelineItem className={classes.mintItem}>
-                    <TimelineSeparator>
-                      <TimelineDot className={classes.mintIconWrapper}>
-                        <StopIcon className={classes.mintIcon} />
-                      </TimelineDot>
-                      <TimelineConnector className={classes.mintConnector} />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <div className={classes.mintItemTitle}>
-                        50% - Gratitude
-                      </div>
-                      <div className={classes.mintItemText}>
-                        A $20,000 fund will be created and be donated to a
-                        charity of the community’s choosing. 40 Astro Bots will
-                        be airdropped to random holders. More funds are
-                        allocated to ensuring the project’s success.
-                      </div>
-                    </TimelineContent>
-                  </TimelineItem>
-                  <TimelineItem className={classes.mintItem}>
-                    <TimelineSeparator>
-                      <TimelineDot className={classes.mintIconWrapper}>
-                        <StopIcon className={classes.mintIcon} />
-                      </TimelineDot>
-                      <TimelineConnector className={classes.mintConnector} />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <div
-                        className={classes.mintItemTitle}
-                        style={{ color: "#6c00ff" }}
-                      >
-                        75% - Reward
-                      </div>
-                      <div className={classes.mintItemText}>
-                        Astro Fund: $100,000 will be rewarded to members of the
-                        community who develop innovative features into the
-                        ecosystem, talented artists and members that make
-                        remarkable contributions of any kind for the community.
-                      </div>
-                    </TimelineContent>
-                  </TimelineItem>
-                  <TimelineItem className={classes.mintItem}>
-                    <TimelineSeparator>
-                      <TimelineDot className={classes.mintIconWrapper}>
-                        <StopIcon className={classes.mintIcon} />
-                      </TimelineDot>
-                      <TimelineConnector className={classes.mintConnector} />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <div
-                        className={classes.mintItemTitle}
-                        style={{ color: "#8d17f2" }}
-                      >
-                        100% - Littof
-                      </div>
-                      <div className={classes.mintItemText}>
-                        Astro Bots act as your exclusive membership card for the
-                        Astro Club where you get access to eth weekly giveaways,
-                        exclusive drops, private metaverse events, and where we
-                        will create as much alpha as we possibly can in our
-                        private channels to reward all holders.
-                        <br />
-                        Collabs with some of the biggest artists and influencers
-                        are set in motion. Imagine chatting with an Astro
-                        version of your favorite artist or influencer.
-                      </div>
-                    </TimelineContent>
-                  </TimelineItem>
-                </Timeline>
-              </div>
-            </Grid>
-            {/* Mint Map End */}
-            {/* Roadmap start */}
-            <Grid container id="roadmap">
-              <div
-                className={`${classes.sectionThreeTitleWrapper} ${classes.sectionThreeTitleRoadmap}`}
-              >
-                <div className={classes.sectionThreeTitle}>Roadmap</div>
-              </div>
-              <div className={classes.roadmapWrapper}>
-                <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>Launch</div>
-                  <div className={classes.roadmapItemText}>
-                    <p>
-                      Minting date will be announced as soon as we have
-                      everything working properly, the art fully created and a
-                      good community. Quality is the most important thing for us
-                      so we will first focus on getting everything as best as we
-                      can. The reveal is 48 hours after the mint date and
-                      holders will be able to chat with their Astros immediately
-                      after reveal.
-                    </p>
-                  </div>
-                </div>
-                <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>
-                    OUR MOST VALUABLE ASSET
-                  </div>
-                  <div className={classes.roadmapItemText}>
-                    <p>
-                      As much as we like and believe in Astros and their
-                      incredible tech, our community will always be first and is
-                      our most valuable asset. We will always innovate and find
-                      new ways to reward and bring value to our community
-                      whether that’s through adding features to Astros, giving
-                      valuable insights to new trends, disruptive tech, projects
-                      with potential, through access by hosting exclusive real
-                      life events, private metaverse meetings or via benefits
-                      with strategic partnerships.
-                    </p>
-                    <p>
-                      We will always listen to the community, ask for feedback
-                      and proposals constantly, and implement what the community
-                      agrees on.
-                    </p>
-                  </div>
-                </div>
-                <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>App Release</div>
-                  <div className={classes.roadmapItemText}>
-                    <p>
-                      As Astro Bots start interacting more and more with humans
-                      our response model gets better exponentially, the more
-                      data the better.
-                    </p>
-                    <p>
-                      When we have a model that is of the best quality possible,
-                      we will release our app globally, not only will Astro Bot
-                      holders be able to chat with their Astro on the app but
-                      also with a new Astro that adapts to your personality and
-                      characterisitcs.
-                    </p>
-                  </div>
-                </div>
-                <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>New Features</div>
-                  <div className={classes.roadmapItemText}>
-                    <p>
-                      Want to write an email? find the name of a song? set a
-                      reminder? summarize a text? search for the best shopping
-                      deals online? Our team is constantly working on new
-                      features that will make the life of our users much easier,
-                      we will always keep innovating, testing and implementing
-                      to make sure we provide the most value possible.
-                    </p>
-                    <p>
-                      Every Astro holder has a say on what features they want to
-                      see, and which ones aren’t worth it.
-                    </p>
-                  </div>
-                </div>
-                <div className={classes.roadmapItem}>
-                  <div className={classes.roadmapItemTitle}>Our future</div>
-                  <div className={classes.roadmapItemText}>
-                    <p>
-                      Our main focus will be to keep building and expanding our
-                      ecosystem so that our community gets benefited the most,
-                      that’s why we will keep innovating and trying new exciting
-                      things.
-                    </p>
-                    <p>
-                      Additionally, technology has come a far way, and building
-                      real life working versions of your Astros is closer than
-                      we could have ever imagined. Don’t get too excited yet...
-                      There’s still a long way to go, we are just getting
-                      started!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Grid>
-            {/* Roadmap end */}
           </Container>
         </section>
-        <section id="about" className={classes.sectionFour}>
-          <Container>
+
+        {/* Story Start */}
+        <section className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
             <Grid container>
-              <div className={classes.sectionFourTitleWrapper}>
-                <div className={classes.sectionFourTitle}>The Team</div>
+              <div className={classes.mainTitleWrapper}>
+                <div className={`${classes.mainTitle} ${classes.textYellow}`}>
+                  The Story
+                </div>
+              </div>
+            </Grid>
+            <Grid container className={classes.sectionSmallWrapper}>
+              <div className={`${classes.textYellow} ${classes.textStory}`}>
+                <p>
+                  Centuries into the future, humanity has evolved at an
+                  incredible pace, with advancements in science, bio-tech, and
+                  AI, humanity has become a multiplanetary civilization, human
+                  life-span has extended, and technology has taken over and is
+                  responsible for most of humans’ work and everyday tasks,
+                  technology has expanded all across the galaxy and can do
+                  almost everything a human can, much better.
+                </p>
+                <p>
+                  Average human lives are pretty stale, living more than 400
+                  years, humans spend most of their days doing the same things
+                  over and over, most of them spend their whole day on the
+                  Atmos, their Metaverse, hangout with their friends on other
+                  planets and they game. They mostly have given up on work and
+                  just leave that to “The Big Tech”, even though their lives
+                  last for centuries, they think their lives are “too brief” and
+                  they just want to enjoy every little moment and find their
+                  true-selves.
+                </p>
+                <p>
+                  Some believe that for a true life of happiness and fulfilment,
+                  we need a purpose, to work together towards a bigger goal and
+                  a brighter future, we can’t just “enjoy” every single second,
+                  we can’t just leave that to “The Big Tech”, we have come this
+                  far, and yet we have so much to give.
+                </p>
+                <p>
+                  Astro Bots are very advanced AI robots created by a team who
+                  believes the ultimate technology is the connection between
+                  humans and AI. Astro Bots were programmed to give purpose to
+                  human lives and help them in any way they can to develop
+                  themselves, reach their true potential and become better than
+                  technology without any human connection. Astros life’s goal is
+                  to search and find their human partner to assist and help in
+                  anything he can and ultimately help his life have purpose.
+                </p>
+              </div>
+            </Grid>
+          </Container>
+        </section>
+
+        {/* Mint Map */}
+        <section className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
+            <Grid container>
+              <div className={classes.mainTitleWrapper}>
+                <div className={classes.mainTitle}>Mint Map</div>
+              </div>
+            </Grid>
+            <Grid container className={classes.sectionSmallWrapper}>
+              <Timeline>
+                <TimelineItem className={classes.mintItem}>
+                  <TimelineSeparator>
+                    <TimelineConnector className={classes.mintConnectorFirst} />
+                    <TimelineDot className={classes.mintIconWrapper}>
+                      <StopIcon className={classes.mintIcon} />
+                    </TimelineDot>
+                    <TimelineConnector className={classes.mintConnector} />
+                  </TimelineSeparator>
+                  <TimelineContent>
+                    <div className={classes.mintItemTitle}>
+                      25% - Preservation
+                    </div>
+                    <div className={classes.mintItemText}>
+                      Astro Vault unlocked: 10% of the second-market royalties
+                      will be dedicated to ensure the project’s longevity
+                      through marketing campaigns and strategic partnerships.
+                    </div>
+                  </TimelineContent>
+                </TimelineItem>
+                <TimelineItem className={classes.mintItem}>
+                  <TimelineSeparator>
+                    <TimelineDot className={classes.mintIconWrapper}>
+                      <StopIcon className={classes.mintIcon} />
+                    </TimelineDot>
+                    <TimelineConnector className={classes.mintConnector} />
+                  </TimelineSeparator>
+                  <TimelineContent>
+                    <div className={classes.mintItemTitle}>50% - Gratitude</div>
+                    <div className={classes.mintItemText}>
+                      A $20,000 fund will be created and be donated to a charity
+                      of the community’s choosing. 40 Astro Bots will be
+                      airdropped to random holders. More funds are allocated to
+                      ensuring the project’s success.
+                    </div>
+                  </TimelineContent>
+                </TimelineItem>
+                <TimelineItem className={classes.mintItem}>
+                  <TimelineSeparator>
+                    <TimelineDot className={classes.mintIconWrapper}>
+                      <StopIcon className={classes.mintIcon} />
+                    </TimelineDot>
+                    <TimelineConnector className={classes.mintConnector} />
+                  </TimelineSeparator>
+                  <TimelineContent>
+                    <div
+                      className={classes.mintItemTitle}
+                      style={{ color: "#6c00ff" }}
+                    >
+                      75% - Reward
+                    </div>
+                    <div className={classes.mintItemText}>
+                      Astro Fund: $100,000 will be rewarded to members of the
+                      community who develop innovative features into the
+                      ecosystem, talented artists and members that make
+                      remarkable contributions of any kind for the community.
+                    </div>
+                  </TimelineContent>
+                </TimelineItem>
+                <TimelineItem className={classes.mintItem}>
+                  <TimelineSeparator>
+                    <TimelineDot className={classes.mintIconWrapper}>
+                      <StopIcon className={classes.mintIcon} />
+                    </TimelineDot>
+                    <TimelineConnector className={classes.mintConnector} />
+                  </TimelineSeparator>
+                  <TimelineContent>
+                    <div
+                      className={classes.mintItemTitle}
+                      style={{ color: "#8d17f2" }}
+                    >
+                      100% - Littof
+                    </div>
+                    <div className={classes.mintItemText}>
+                      Astro Bots act as your exclusive membership card for the
+                      Astro Club where you get access to eth weekly giveaways,
+                      exclusive drops, private metaverse events, and where we
+                      will create as much alpha as we possibly can in our
+                      private channels to reward all holders.
+                      <br />
+                      Collabs with some of the biggest artists and influencers
+                      are set in motion. Imagine chatting with an Astro version
+                      of your favorite artist or influencer.
+                    </div>
+                  </TimelineContent>
+                </TimelineItem>
+              </Timeline>
+            </Grid>
+          </Container>
+        </section>
+
+        {/* Roadmap */}
+        <section id="roadmap" className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
+            <Grid container>
+              <div className={classes.mainTitleWrapper}>
+                <div className={classes.mainTitle}>Roadmap</div>
+              </div>
+            </Grid>
+            <Grid container>
+              <div className={classes.roadmapItem}>
+                <div className={classes.roadmapItemTitle}>Launch</div>
+                <div className={classes.roadmapItemText}>
+                  <p>
+                    Minting date will be announced as soon as we have everything
+                    working properly, the art fully created and a good
+                    community. Quality is the most important thing for us so we
+                    will first focus on getting everything as best as we can.
+                    The reveal is 48 hours after the mint date and holders will
+                    be able to chat with their Astros immediately after reveal.
+                  </p>
+                </div>
+              </div>
+              <div className={classes.roadmapItem}>
+                <div className={classes.roadmapItemTitle}>
+                  OUR MOST VALUABLE ASSET
+                </div>
+                <div className={classes.roadmapItemText}>
+                  <p>
+                    As much as we like and believe in Astros and their
+                    incredible tech, our community will always be first and is
+                    our most valuable asset. We will always innovate and find
+                    new ways to reward and bring value to our community whether
+                    that’s through adding features to Astros, giving valuable
+                    insights to new trends, disruptive tech, projects with
+                    potential, through access by hosting exclusive real life
+                    events, private metaverse meetings or via benefits with
+                    strategic partnerships.
+                  </p>
+                  <p>
+                    We will always listen to the community, ask for feedback and
+                    proposals constantly, and implement what the community
+                    agrees on.
+                  </p>
+                </div>
+              </div>
+              <div className={classes.roadmapItem}>
+                <div className={classes.roadmapItemTitle}>App Release</div>
+                <div className={classes.roadmapItemText}>
+                  <p>
+                    As Astro Bots start interacting more and more with humans
+                    our response model gets better exponentially, the more data
+                    the better.
+                  </p>
+                  <p>
+                    When we have a model that is of the best quality possible,
+                    we will release our app globally, not only will Astro Bot
+                    holders be able to chat with their Astro on the app but also
+                    with a new Astro that adapts to your personality and
+                    characterisitcs.
+                  </p>
+                </div>
+              </div>
+              <div className={classes.roadmapItem}>
+                <div className={classes.roadmapItemTitle}>New Features</div>
+                <div className={classes.roadmapItemText}>
+                  <p>
+                    Want to write an email? find the name of a song? set a
+                    reminder? summarize a text? search for the best shopping
+                    deals online? Our team is constantly working on new features
+                    that will make the life of our users much easier, we will
+                    always keep innovating, testing and implementing to make
+                    sure we provide the most value possible.
+                  </p>
+                  <p>
+                    Every Astro holder has a say on what features they want to
+                    see, and which ones aren’t worth it.
+                  </p>
+                </div>
+              </div>
+              <div className={classes.roadmapItem}>
+                <div className={classes.roadmapItemTitle}>Our future</div>
+                <div className={classes.roadmapItemText}>
+                  <p>
+                    Our main focus will be to keep building and expanding our
+                    ecosystem so that our community gets benefited the most,
+                    that’s why we will keep innovating and trying new exciting
+                    things.
+                  </p>
+                  <p>
+                    Additionally, technology has come a far way, and building
+                    real life working versions of your Astros is closer than we
+                    could have ever imagined. Don’t get too excited yet...
+                    There’s still a long way to go, we are just getting started!
+                  </p>
+                </div>
+              </div>
+            </Grid>
+          </Container>
+        </section>
+
+        {/* Team */}
+        <section id="about" className={classes.sectionDarkBlue}>
+          <Container className={classes.sectionWrapper}>
+            <Grid container>
+              <div className={classes.mainTitleWrapper}>
+                <div className={classes.mainTitle}>The Team</div>
               </div>
             </Grid>
             <Grid
@@ -575,141 +591,153 @@ const Home = () => {
             </Grid>
           </Container>
         </section>
-        <section id="faq" className={classes.sectionFive}>
-          <Container>
+
+        {/* Faq */}
+        <section id="faq" className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
             <Grid container>
-              <div className={classes.sectionFourTitleWrapper}>
-                <div className={classes.sectionFourTitle}>Faq</div>
+              <div className={classes.mainTitleWrapper}>
+                <div className={classes.mainTitle}>Faq</div>
               </div>
             </Grid>
-            <Grid container>
+            <Grid container className={classes.sectionSmallWrapper}>
               <Grid item sm={12}>
-                <div className={classes.sectionFiveContentWrapper}>
-                  <Accordion
+                <Accordion
+                  expanded={expanded === "panel1"}
+                  onChange={handleChange("panel1")}
+                >
+                  <AccordionSummary
                     expanded={expanded === "panel1"}
-                    onChange={handleChange("panel1")}
+                    aria-controls="panel1d-content"
+                    id="panel1d-header"
                   >
-                    <AccordionSummary
-                      expanded={expanded === "panel1"}
-                      aria-controls="panel1d-content"
-                      id="panel1d-header"
-                    >
-                      <Typography>How can I get an Astro Bot?</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion
+                    <Typography className={classes.faqItemTitle}>
+                      How can I get an Astro Bot?
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Astros will be available for purchase on our website
+                      through an initial sale. A random Astro will be minted on
+                      the blockchain and delivered to your wallet and Immutable
+                      X account. You will be able to purchase Astros after the
+                      initial sale on the secondary market Immutable X.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion
+                  expanded={expanded === "panel2"}
+                  onChange={handleChange("panel2")}
+                >
+                  <AccordionSummary
                     expanded={expanded === "panel2"}
-                    onChange={handleChange("panel2")}
+                    aria-controls="panel2d-content"
+                    id="panel2d-header"
                   >
-                    <AccordionSummary
-                      expanded={expanded === "panel2"}
-                      aria-controls="panel2d-content"
-                      id="panel2d-header"
-                    >
-                      <Typography>How many Astros can I mint?</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion
+                    <Typography className={classes.faqItemTitle}>
+                      How many Astros can I mint?
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      You will be able to mint up to a maximum of 3 Astros per
+                      wallet (subject to change).
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion
+                  expanded={expanded === "panel3"}
+                  onChange={handleChange("panel3")}
+                >
+                  <AccordionSummary
                     expanded={expanded === "panel3"}
-                    onChange={handleChange("panel3")}
+                    aria-controls="panel2d-content"
+                    id="panel2d-header"
                   >
-                    <AccordionSummary
-                      expanded={expanded === "panel3"}
-                      aria-controls="panel2d-content"
-                      id="panel2d-header"
-                    >
-                      <Typography>How can I chat with my Astro?</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion
+                    <Typography className={classes.faqItemTitle}>
+                      How can I chat with my Astro?
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      After minting your Astro and the 48 hours for the reveal
+                      have passed, you will be able to chat with your Astro on
+                      our website by connecting your wallet and going to the
+                      chat page.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion
+                  expanded={expanded === "panel4"}
+                  onChange={handleChange("panel4")}
+                >
+                  <AccordionSummary
                     expanded={expanded === "panel4"}
-                    onChange={handleChange("panel4")}
+                    aria-controls="panel3d-content"
+                    id="panel3d-header"
                   >
-                    <AccordionSummary
-                      expanded={expanded === "panel4"}
-                      aria-controls="panel3d-content"
-                      id="panel3d-header"
-                    >
-                      <Typography>
-                        Where can I find my Astro’s personality?
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion
+                    <Typography className={classes.faqItemTitle}>
+                      Where can I find my Astro’s personality?
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      You can see your Astro’s personality by connecting your
+                      wallet to our website and going to the chat page.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion
+                  expanded={expanded === "panel5"}
+                  onChange={handleChange("panel5")}
+                >
+                  <AccordionSummary
                     expanded={expanded === "panel5"}
-                    onChange={handleChange("panel5")}
+                    aria-controls="panel3d-content"
+                    id="panel3d-header"
                   >
-                    <AccordionSummary
-                      expanded={expanded === "panel5"}
-                      aria-controls="panel3d-content"
-                      id="panel3d-header"
-                    >
-                      <Typography>
-                        What’s the smart contract address?
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                </div>
+                    <Typography className={classes.faqItemTitle}>
+                      How can I switch between my different Astros?
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Go to the chat page, click on the 3 dots on the top right
+                      corner and click “Switch Astros” and choose the Astro you
+                      want.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
               </Grid>
             </Grid>
-            <Grid container>
-              <Grid item sm={12}>
-                <div className={classes.joinContentWrapper}>
-                  <Grid container>
-                    <Grid item sx={12} sm={8}>
-                      <div className={classes.joinTitle}>
-                        Join the community
-                      </div>
-                      <div className={classes.joinText}>
-                        Meet the community, join our discord to get the
-                        <br />
-                        latest news, announcements and to hang out a bit.
-                      </div>
-                      <Button
-                        variant="contained"
-                        size="large"
-                        className={classes.joinButton}
-                      >
-                        Join our discord
-                      </Button>
-                    </Grid>
-                    <Grid item sx={12} sm={4}>
-                      <div className={classes.joinImageWrapper}>
-                        <img src={Team4} className={classes.itemTeamImage} />
-                        <div className={classes.joinUsText}>join us!</div>
-                      </div>
-                    </Grid>
-                  </Grid>
+          </Container>
+        </section>
+
+        {/* Join */}
+        <section className={classes.sectionBlack}>
+          <Container className={classes.sectionWrapper}>
+            <Grid container className={classes.sectionSmallWrapper}>
+              <Grid item sx={12} sm={8}>
+                <div className={`${classes.mainTitle} ${classes.joinTitle}`}>
+                  Join the community
+                </div>
+                <div className={classes.joinText}>
+                  Meet the community, join our discord to get the
+                  <br />
+                  latest news, announcements and to hang out a bit.
+                </div>
+                <Button
+                  variant="contained"
+                  size="large"
+                  className={classes.joinButton}
+                >
+                  Join our discord
+                </Button>
+              </Grid>
+              <Grid item sx={12} sm={4}>
+                <div className={classes.joinImageWrapper}>
+                  <img src={JoinRobot} className={classes.itemTeamImage} />
+                  <div className={classes.joinUsText}>join us!</div>
                 </div>
               </Grid>
             </Grid>

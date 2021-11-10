@@ -72,13 +72,13 @@ const Header = () => {
           <Grid item xs={12} sm={6} md={2} className={classes.iconsWrapper}>
             <div className={classes.icons}>
               <div className={classes.iconsItem}>
-                <DiscordIcon width={35} height={30} />
+                <DiscordIcon width={28} height={25} />
               </div>
               <div className={classes.iconsItem}>
-                <TwitterIcon sx={{ fontSize: 35}} />
+                <TwitterIcon sx={{ fontSize: 30}} />
               </div>
               <div className={classes.iconsItem}>
-                <OpenSeaIcon width={30} height={30} />
+                <OpenSeaIcon width={25} height={25} />
               </div>
             </div>
           </Grid>
