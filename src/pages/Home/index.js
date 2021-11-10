@@ -425,7 +425,7 @@ const Home = () => {
                       className={classes.mintItemTitle}
                       style={{ color: "#8d17f2" }}
                     >
-                      100% - Littof
+                      100% - Liftoof
                     </div>
                     <div className={classes.mintItemText}>
                       Astro Bots act as your exclusive membership card for the
