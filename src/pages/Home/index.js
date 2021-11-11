@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import { useHistory } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import LinearProgress, {
   linearProgressClasses,
@@ -23,6 +24,7 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 
 import { Header, Footer } from "../../components";
+import * as keys from "../../utils/keys";
 import MainRobot from "../../assets/images/android-black-and-gold.png";
 import RedRobot from "../../assets/images/android-red.png";
 import BlueRobot from "../../assets/images/android-blue.png";
@@ -95,6 +97,7 @@ const Home = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [motion, setMotion] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     handleChangeMotion();
@@ -120,6 +123,16 @@ const Home = () => {
             >
               <div className={classes.welcomeWrapper}>Welcome</div>
             </Zoom>
+            <div className={classes.chatButtonWrapper}>
+              <Button
+                variant="contained"
+                size="large"
+                className={classes.chatButton}
+                onClick={() => history.push(keys.CHAT)}
+              >
+                Chat
+              </Button>
+            </div>
             <img src={MainRobot} className={classes.robotImage} />
           </div>
         </section>
@@ -128,7 +141,7 @@ const Home = () => {
         <section className={classes.sectionBlack}>
           <Container className={classes.sectionWrapper}>
             <Grid container>
-              <Grid item xs={12} sm={6}>
+              <Grid item sm={12} md={6}>
                 <div className={classes.sectionTwoContent}>
                   <div className={classes.mainTitle}>
                     <span>The Most</span>
@@ -159,9 +172,9 @@ const Home = () => {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <div className={classes.robotWrapper}>
-                  <img src={RedRobot} className={classes.redRobotImage} />
+              <Grid item sm={12} md={6}>
+                <div className={classes.contentImageWrapper}>
+                  <img src={RedRobot} className={classes.contentImage} />
                 </div>
               </Grid>
             </Grid>
@@ -189,19 +202,19 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <div className={classes.itemImage}>
-                  <img src={GoldRobot} className={classes.redRobotImage} />
+                  <img src={GoldRobot} className={classes.contentImage} />
                 </div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <div className={`${classes.itemImage} ${classes.itemImageBig}`}>
-                  <img src={GrayRobot} className={classes.redRobotImage} />
+                  <img src={GrayRobot} className={classes.contentImage} />
                 </div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <div className={classes.itemImage}>
-                  <img src={VioletRobot} className={classes.redRobotImage} />
+                  <img src={VioletRobot} className={classes.contentImage} />
                 </div>
               </Grid>
             </Grid>
@@ -227,15 +240,10 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container>
-              <Grid
-                item
-                xs={12}
-                sm={5}
-                className={classes.redRobotImageWrapper}
-              >
-                <img src={BlueRobot} className={classes.redRobotImage} />
+              <Grid item xs={12} md={5} className={classes.contentImageWrapper}>
+                <img src={BlueRobot} className={classes.contentImage} />
               </Grid>
-              <Grid item xs={12} sm={7}>
+              <Grid item xs={12} md={7}>
                 <div className={classes.progressesWrapper}>
                   <div className={classes.progressItem}>
                     <div className={classes.progressItemText}>Empathy</div>
@@ -558,32 +566,32 @@ const Home = () => {
               rowSpacing={4}
               columnSpacing={{ xs: 2, sm: 6, md: 12 }}
             >
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <img src={Team1} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <img src={Team2} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <img src={Team3} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <img src={Team4} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <img src={Team5} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={4}>
                 <img src={Team6} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
@@ -717,7 +725,7 @@ const Home = () => {
         <section className={classes.sectionBlack}>
           <Container className={classes.sectionWrapper}>
             <Grid container className={classes.sectionSmallWrapper}>
-              <Grid item sx={12} sm={8}>
+              <Grid item sm={12} md={8}>
                 <div className={`${classes.mainTitle} ${classes.joinTitle}`}>
                   Join the community
                 </div>
@@ -734,7 +742,7 @@ const Home = () => {
                   Join our discord
                 </Button>
               </Grid>
-              <Grid item sx={12} sm={4}>
+              <Grid item sm={12} md={4}>
                 <div className={classes.joinImageWrapper}>
                   <img src={JoinRobot} className={classes.itemTeamImage} />
                   <div className={classes.joinUsText}>join us!</div>

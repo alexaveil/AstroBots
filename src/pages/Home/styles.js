@@ -5,13 +5,10 @@ const useStyles = makeStyles((theme) => ({
   sectionGray: {
     backgroundColor: "#d0cece",
     margin: "-1px 0",
-    height: "95vh",
+    height: "90vh",
     width: "100%",
     display: "flex",
     justifyContent: "center",
-    [theme.breakpoints.down("sm")]: {
-      height: "72vh",
-    },
   },
   robotWrapper: {
     display: "flex",
@@ -36,10 +33,25 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 25,
     borderBottomLeftRadius: 0,
     [theme.breakpoints.down("sm")]: {
-      position: "relative",
-      top: -20,
-      left: 0,
-      margin: "0 auto",
+      fontSize: 16,
+      padding: "5px 15px",
+    },
+  },
+  chatButton: {
+    position: "absolute!important",
+    margin: "0 auto!important",
+    left: 0,
+    right: 0,
+    bottom: "18%",
+    backgroundColor: "#0D1A8C!important",
+    borderRadius: "0!important",
+    fontSize: "24px!important",
+    textTransform: "capitalize!important",
+    width: 160,
+    [theme.breakpoints.down("sm")]: {
+      width: 120,
+      fontSize: "20px!important",
+      bottom: "10%",
     },
   },
   robotImage: {
@@ -53,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   sectionWrapper: {
     margin: "-1px 0",
     padding: "50px 0",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       padding: "20px 0",
     },
   },
@@ -61,6 +73,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 900,
     width: "100%",
     margin: "0 auto",
+    [theme.breakpoints.down("md")]: {
+      padding: "0px 40px",
+    },
   },
   sectionBlack: {
     backgroundColor: "#000000",
@@ -73,6 +88,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     height: "100%",
+    [theme.breakpoints.down("md")]: {
+      padding: "20px 40px",
+    },
   },
   mainTitleWrapper: {
     width: "100%",
@@ -99,7 +117,14 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fotnStyle: "italic"
   },
-  redRobotImage: {
+  contentImageWrapper: {
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    },
+  },
+  contentImage: {
     maxWidth: 500,
     width: "100%",
   },
@@ -156,14 +181,11 @@ const useStyles = makeStyles((theme) => ({
   itemImage: {
     padding: 20,
     [theme.breakpoints.down("sm")]: {
-      padding: 0,
+      padding: 15,
     },
   },
   itemImageBig: {
     padding: 5,
-    [theme.breakpoints.down("sm")]: {
-      padding: 0,
-    },
   },
   progressesWrapper: {
     display: "flex",
@@ -212,7 +234,7 @@ const useStyles = makeStyles((theme) => ({
   },
   joinTitle: {
     marginTop: 30,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       marginTop: "0px!important",
     },
   },
@@ -223,7 +245,7 @@ const useStyles = makeStyles((theme) => ({
   },
   joinButton: {
     borderRadius: "0!important",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       marginBottom: "30px!important",
     },
   },

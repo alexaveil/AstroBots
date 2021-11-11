@@ -1,19 +1,31 @@
+import React, { useState } from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { useHistory } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
 import { DiscordIcon, OpenSeaIcon } from "../Icons";
-import * as keys from "../../utils/keys";
 import useStyles from "./styles";
 import LogoBlackLetter from "../../assets/images/logo-black-letter.png";
 import LogoBlackText from "../../assets/images/logo-black-text.png";
 
 const Header = () => {
   const classes = useStyles();
-  const history = useHistory();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const scrollToSection = (e) => {
     e.preventDefault();
@@ -30,13 +42,13 @@ const Header = () => {
     >
       <Container>
         <Grid container className={classes.headerWrapper}>
-          <Grid item xs={12} sm={6} md={4}>
-            <a href="/" className={classes.logoWrapper}>
+          <div className={classes.logoWrapper}>
+            <a href="/" className={classes.logoWrapperLink}>
               <img src={LogoBlackLetter} className={classes.logoImageLetter} />
               <img src={LogoBlackText} className={classes.logoImageText} />
             </a>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} className={classes.navWrapper}>
+          </div>
+          <div className={classes.navWrapper}>
             <nav>
               <ul className={classes.topMenu}>
                 <li className={classes.topMenuItem}>
@@ -68,29 +80,47 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
-          </Grid>
-          <Grid item xs={12} sm={6} md={2} className={classes.iconsWrapper}>
+          </div>
+          <div className={classes.iconsWrapper}>
             <div className={classes.icons}>
               <div className={classes.iconsItem}>
                 <DiscordIcon width={28} height={25} />
               </div>
               <div className={classes.iconsItem}>
-                <TwitterIcon sx={{ fontSize: 30}} />
+                <TwitterIcon sx={{ fontSize: 30 }} />
               </div>
               <div className={classes.iconsItem}>
                 <OpenSeaIcon width={25} height={25} />
               </div>
             </div>
-          </Grid>
-          <Grid item xs={12} sm={6} md={2} className={classes.buttonWrapper}>
+          </div>
+          <div className={classes.buttonWrapper}>
             <Button
               variant="contained"
               className={classes.connectButton}
-              onClick={() => history.push(keys.CHAT)}
+              onClick={() => {}}
             >
               Connect Wallet
             </Button>
-          </Grid>
+          </div>
+          <div className={classes.buttonMobileWrapper}>
+            <IconButton component="span" onClick={handleClick}>
+              <MenuIcon className={classes.mobileIcon} />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose}>About</MenuItem>
+              <MenuItem onClick={handleClose}>Roadmap</MenuItem>
+              <MenuItem onClick={handleClose}>Faq</MenuItem>
+            </Menu>
+          </div>
         </Grid>
       </Container>
     </AppBar>

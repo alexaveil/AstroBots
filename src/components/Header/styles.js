@@ -8,32 +8,56 @@ const useStyles = makeStyles((theme) => ({
   headerWrapper: {
     paddingTop: 40,
     paddingBottom: 40,
+    display: "flex",
     alignItems: "center",
+    justifyContent: "space-between",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: 20,
+      paddingBottom: 20,
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: 10,
+      paddingBottom: 10,
+    },
   },
   logoWrapper: {
     display: "flex",
+    width: '20%',
+    [theme.breakpoints.down("sm")]: {
+      width: 'auto',
+    },
+  },
+  logoWrapperLink: {
+    display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    [theme.breakpoints.down("md")]: {
-      justifyContent: "center",
-      margin: "5px 0!important",
-    },
   },
   logoImageLetter: {
     maxWidth: 40,
     marginRight: 10,
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: 30,
+      marginRight: 0
+    },
   },
   logoImageText: {
     maxWidth: 150,
+    [theme.breakpoints.down("md")]: {
+      maxWidth: 100,
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "none"
+    },
   },
   navWrapper: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    width: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    [theme.breakpoints.down("lg")]: {
+      width: '40%',
+    },
     [theme.breakpoints.down("md")]: {
-      justifyContent: "center",
-      margin: "20px 0!important",
+      display: "none",
     },
   },
   topMenu: {
@@ -57,30 +81,33 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconsWrapper: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
+    width: '15%',
+    [theme.breakpoints.down("lg")]: {
+      width: '20%',
+    },
     [theme.breakpoints.down("md")]: {
-      justifyContent: "center",
       margin: "5px 0!important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: 'auto',
     },
   },
   icons: {
     display: "flex",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 4,
   },
   iconsItem: {
     padding: "0 10px",
+    [theme.breakpoints.down("md")]: {
+      padding: "0",
+      transform: "scale(0.75)",
+    },
   },
   buttonWrapper: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    [theme.breakpoints.down("md")]: {
-      justifyContent: "center",
-      margin: "5px 0!important",
+    width: '15%',
+    [theme.breakpoints.down("lg")]: {
+      width: 'auto',
     },
   },
   connectButton: {
@@ -90,6 +117,27 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "18px!important",
     height: "40px!important",
     fontWeight: "300!important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "16px!important",
+      height: "35px!important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "14px!important",
+      height: "30px!important",
+    },
+  },
+  buttonMobileWrapper: {
+    display: "none",
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+    },
+  },
+  mobileIcon: {
+    fontSize: "50px!important",
+    color: "black",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "30px!important",
+    },
   },
 }));
 
