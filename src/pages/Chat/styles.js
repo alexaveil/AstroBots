@@ -21,30 +21,27 @@ const useStyles = makeStyles((theme) => ({
   sidebar: {
     backgroundColor: "#11121b",
     borderRight: "1px solid rgb(255 255 255 / 15%)",
-    width: "25%",
+    width: "20%",
     padding: 40,
     display: "flex",
     flexDirection: "column",
+    [theme.breakpoints.down("xl")]: {
+      width: "35%",
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "none"
+    },
   },
   userWrapper: {
     display: "flex",
     alignItems: "center",
-  },
-  userAvatar: {
-    marginRight: 20,
-    height: 50
-  },
-  userAvatarImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 50
   },
   userName: {
     color: 'white',
     fontSize: 18
   },
   robotWrapper: {
-    marginTop: 60,
+    marginTop: 100,
   },
   robotName: {
     textAlign: "center",
@@ -78,6 +75,13 @@ const useStyles = makeStyles((theme) => ({
     width: "70%",
     display: "flex",
     flexDirection: "column",
+    backgroundSize: "contain",
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   },
   topPanel: {
     height: 80,
@@ -88,6 +92,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "flex-end",
     padding: "0 10px",
+  },
+  topSearchWrapper: {
+    width: "40%",
+    [theme.breakpoints.down("sm")]: {
+      width: "70%",
+    },
   },
   icon: {
     color: "#fff",
@@ -114,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
   messageLeftWrapper: {
     width: "100%",
     display: "flex",
+    marginBottom: 20,
   },
   messageLeftText: {
     backgroundColor: "#262730",
@@ -125,6 +136,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "flex-end",
+    marginBottom: 20,
   },
   messageRightText: {
     backgroundColor: "#101492",
@@ -140,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: "0 50px",
   },
-  messageInput: {
+  input: {
     backgroundColor: "#26272F",
     width: "100%",
     border: "none",

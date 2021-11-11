@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
 
 import RedRobot from "../../assets/images/android-red.png";
+import ChatBackground from "../../assets/images/chat-background.png";
 import useStyles from "./styles";
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 15,
   borderRadius: 15,
   [`&.${linearProgressClasses.colorPrimary}`]: {
@@ -26,16 +29,22 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 const Chat = () => {
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <main className={classes.wrapper}>
       <div className={classes.chatWrapper}>
         <div className={classes.sidebar}>
           <div className={classes.userWrapper}>
-            <div className={classes.userAvatar}>
-              <img src={RedRobot} className={classes.userAvatarImage} />
-            </div>
-            <div className={classes.userName}>User Name</div>
+            <div className={classes.userName}>0xc32563q6sftw35tES</div>
           </div>
           <div className={classes.robotWrapper}>
             <div>
@@ -94,15 +103,27 @@ const Chat = () => {
             </div>
           </div>
         </div>
-        <div className={classes.content}>
+        <div
+          className={classes.content}
+          style={{ backgroundImage: `url(${ChatBackground})` }}
+        >
           <div className={classes.topPanel}>
+            <div className={classes.topSearchWrapper}>
+              <input
+                placeholder={"Search a message"}
+                className={classes.input}
+              />
+            </div>
             <div className={classes.topPanelIcons}>
-              <IconButton>
+              <IconButton type="submit" aria-label="search">
                 <SearchIcon sx={{ fontSize: 25 }} className={classes.icon} />
               </IconButton>
-              <IconButton>
+              <IconButton component="span" onClick={handleClick}>
                 <MoreVertIcon sx={{ fontSize: 25 }} className={classes.icon} />
               </IconButton>
+              <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                <MenuItem onClick={handleClose}>Switch Astros</MenuItem>
+              </Menu>
             </div>
           </div>
           <div className={classes.messagesWraper}>
@@ -132,10 +153,7 @@ const Chat = () => {
             </div>
           </div>
           <div className={classes.bottomPanel}>
-            <input
-              placeholder={"Type a message"}
-              className={classes.messageInput}
-            />
+            <input placeholder={"Type a message"} className={classes.input} />
             <IconButton>
               <SendIcon sx={{ fontSize: 30 }} className={classes.icon} />
             </IconButton>

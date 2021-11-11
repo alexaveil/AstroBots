@@ -107,15 +107,7 @@ const Header = () => {
             <IconButton component="span" onClick={handleClick}>
               <MenuIcon className={classes.mobileIcon} />
             </IconButton>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-            >
+            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
               <MenuItem onClick={handleClose}>About</MenuItem>
               <MenuItem onClick={handleClose}>Roadmap</MenuItem>
               <MenuItem onClick={handleClose}>Faq</MenuItem>
