@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
   iconsWrapper: {
     width: '13%',
     [theme.breakpoints.down("lg")]: {
-      width: '20%',
+      width: '15%',
     },
     [theme.breakpoints.down("md")]: {
       margin: "5px 0!important",
@@ -132,13 +132,6 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     [theme.breakpoints.down("md")]: {
       display: "flex",
-    },
-  },
-  mobileIcon: {
-    fontSize: "50px!important",
-    color: "black",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "30px!important",
     },
   },
 }));

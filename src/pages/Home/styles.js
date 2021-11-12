@@ -38,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: 16,
       padding: "5px 15px",
+      top: "50%",
+      right: "2%"
     },
   },
   chatButton: {
@@ -60,9 +62,12 @@ const useStyles = makeStyles((theme) => ({
   robotImage: {
     maxWidth: 800,
     width: "100%",
+    margin: "0 auto",
+    [theme.breakpoints.down("md")]: {
+      maxWidth: 600,
+    },
     [theme.breakpoints.down("sm")]: {
       maxWidth: 400,
-      margin: "0 auto",
     },
   },
   sectionWrapper: {

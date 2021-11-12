@@ -8,9 +8,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 
-import { DiscordIcon, OpenSeaIcon } from "../Icons";
+import { DiscordIcon, OpenSeaIcon, BurgerIcon } from "../Icons";
 import useStyles from "./styles";
 import LogoBlackLetter from "../../assets/images/logo-black-letter.png";
 import LogoBlackText from "../../assets/images/logo-black-text.png";
@@ -105,7 +104,7 @@ const Header = () => {
           </div>
           <div className={classes.buttonMobileWrapper}>
             <IconButton component="span" onClick={handleClick}>
-              <MenuIcon className={classes.mobileIcon} />
+              <BurgerIcon />
             </IconButton>
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
               <MenuItem onClick={handleClose}>About</MenuItem>
