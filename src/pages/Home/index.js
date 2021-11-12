@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
+import Slider from "react-slick";
 import Grid from "@mui/material/Grid";
 import LinearProgress, {
   linearProgressClasses,
@@ -38,7 +39,21 @@ import Team4 from "../../assets/images/team-4.png";
 import Team5 from "../../assets/images/team-5.png";
 import Team6 from "../../assets/images/team-6.png";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import useStyles from "./styles";
+
+const slickSettings = {
+  dots: false,
+  arrows: false,
+  centerMode: true,
+  infinite: true,
+  className: "center",
+  centerPadding: '0',
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+};
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -95,19 +110,10 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
 const Home = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  const [motion, setMotion] = useState(false);
   const history = useHistory();
-
-  useEffect(() => {
-    handleChangeMotion();
-  }, []);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
-  };
-
-  const handleChangeMotion = () => {
-    setMotion((prev) => !prev);
   };
 
   return (
@@ -116,7 +122,9 @@ const Home = () => {
       <main>
         <section className={classes.sectionGray}>
           <div className={classes.robotWrapper}>
-            <div className={`${classes.welcomeWrapper} animate-welcome`}>Welcome</div>
+            <div className={`${classes.welcomeWrapper} animate-welcome`}>
+              Welcome
+            </div>
             <div className={classes.chatButtonWrapper}>
               <Button
                 variant="contained"
@@ -196,20 +204,27 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container>
-              <Grid item xs={4}>
-                <div className={classes.itemImage}>
-                  <img src={GoldRobot} className={classes.contentImage} />
-                </div>
-              </Grid>
-              <Grid item xs={4}>
-                <div className={`${classes.itemImage} ${classes.itemImageBig}`}>
-                  <img src={GrayRobot} className={classes.contentImage} />
-                </div>
-              </Grid>
-              <Grid item xs={4}>
-                <div className={classes.itemImage}>
-                  <img src={VioletRobot} className={classes.contentImage} />
-                </div>
+              <Grid item xs={12}>
+                <Slider {...slickSettings}>
+                  <div className={classes.itemImage}>
+                    <img src={GoldRobot} className={classes.contentImage} />
+                  </div>
+                  <div className={classes.itemImage}>
+                    <img src={GrayRobot} className={classes.contentImage} />
+                  </div>
+                  <div className={classes.itemImage}>
+                    <img src={VioletRobot} className={classes.contentImage} />
+                  </div>
+                  <div className={classes.itemImage}>
+                    <img src={GoldRobot} className={classes.contentImage} />
+                  </div>
+                  <div className={classes.itemImage}>
+                    <img src={GrayRobot} className={classes.contentImage} />
+                  </div>
+                  <div className={classes.itemImage}>
+                    <img src={VioletRobot} className={classes.contentImage} />
+                  </div>
+                </Slider>
               </Grid>
             </Grid>
           </Container>

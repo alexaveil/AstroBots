@@ -13,3 +13,19 @@
     transform: translateY(0px);
   }
 }
+
+.slick-slide {
+  padding: 30px;
+  outline: none!important;
+
+  div {
+    outline: none!important;
+  }
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
+}
+
+.slick-center {
+  padding: 5px;
+}

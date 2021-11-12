@@ -128,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   contentImage: {
+    outline: "none",
     maxWidth: 500,
     width: "100%",
   },
@@ -184,15 +185,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     marginBottom: 10,
   },
-  itemImage: {
-    padding: 20,
-    [theme.breakpoints.down("sm")]: {
-      padding: 15,
-    },
-  },
-  itemImageBig: {
-    padding: 5,
-  },
+  itemImage: {},
   progressesWrapper: {
     display: "flex",
     flexDirection: "column",
