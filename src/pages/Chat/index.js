@@ -29,12 +29,18 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
 
 const Chat = () => {
   const classes = useStyles();
+  const [hideSearch, setHideSearch] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const handleSearch = () => {
+    setHideSearch(!hideSearch);
+  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -109,13 +115,15 @@ const Chat = () => {
         >
           <div className={classes.topPanel}>
             <div className={classes.topSearchWrapper}>
-              <input
-                placeholder={"Search a message"}
-                className={classes.input}
-              />
+              {!hideSearch && (
+                <input
+                  placeholder={"Search a message"}
+                  className={classes.input}
+                />
+              )}
             </div>
             <div className={classes.topPanelIcons}>
-              <IconButton type="submit" aria-label="search">
+              <IconButton component="span" onClick={handleSearch}>
                 <SearchIcon sx={{ fontSize: 25 }} className={classes.icon} />
               </IconButton>
               <IconButton component="span" onClick={handleClick}>

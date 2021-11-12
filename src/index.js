@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './assets/fonts/fonts.scss';
+import './styles/animate.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

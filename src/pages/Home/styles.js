@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      height: "70vh",
+    },
   },
   robotWrapper: {
     display: "flex",
@@ -158,6 +161,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px 0",
     color: "rgb(255 255 255 / 50%)",
     fontSize: 14,
+  },
+  roadmapWrapper: {
+    paddingBottom: 50
   },
   roadmapItem: {
     backgroundColor: "#101492",

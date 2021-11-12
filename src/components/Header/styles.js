@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoWrapper: {
     display: "flex",
-    width: '20%',
+    width: '24%',
     [theme.breakpoints.down("sm")]: {
       width: 'auto',
     },
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconsWrapper: {
-    width: '15%',
+    width: '13%',
     [theme.breakpoints.down("lg")]: {
       width: '20%',
     },
@@ -105,7 +105,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   buttonWrapper: {
-    width: '15%',
+    width: '13%',
+    display: "flex",
+    justifyContent: "flex-end",
     [theme.breakpoints.down("lg")]: {
       width: 'auto',
     },

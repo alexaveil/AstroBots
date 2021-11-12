@@ -16,17 +16,24 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     display: "flex",
+    padding: '0 50px',
     justifyContent: "center",
+    [theme.breakpoints.down("lg")]: {
+      padding: 0,
+    },
   },
   sidebar: {
     backgroundColor: "#11121b",
     borderRight: "1px solid rgb(255 255 255 / 15%)",
-    width: "20%",
+    flex: '0 0 400px',
+    minWidth: 400,
     padding: 40,
     display: "flex",
     flexDirection: "column",
-    [theme.breakpoints.down("xl")]: {
-      width: "35%",
+    [theme.breakpoints.down("lg")]: {
+      flex: '0 0 350px',
+      minWidth: 350,
+      padding: 30,
     },
     [theme.breakpoints.down("md")]: {
       display: "none"
@@ -72,16 +79,10 @@ const useStyles = makeStyles((theme) => ({
     width: "70%",
   },
   content: {
-    width: "70%",
+    flex: '1 1',
     display: "flex",
     flexDirection: "column",
     backgroundSize: "contain",
-    [theme.breakpoints.down("md")]: {
-      width: "90%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-    },
   },
   topPanel: {
     height: 80,
@@ -150,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     alignItems: "center",
-    padding: "0 50px",
+    padding: '0 20px',
   },
   input: {
     backgroundColor: "#26272F",

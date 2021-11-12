@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
-import Zoom from "@mui/material/Zoom";
 import Container from "@mui/material/Container";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -117,12 +116,7 @@ const Home = () => {
       <main>
         <section className={classes.sectionGray}>
           <div className={classes.robotWrapper}>
-            <Zoom
-              in={motion}
-              style={{ transitionDelay: motion ? "500ms" : "0ms" }}
-            >
-              <div className={classes.welcomeWrapper}>Welcome</div>
-            </Zoom>
+            <div className={`${classes.welcomeWrapper} animate-welcome`}>Welcome</div>
             <div className={classes.chatButtonWrapper}>
               <Button
                 variant="contained"
@@ -461,7 +455,7 @@ const Home = () => {
                 <div className={classes.mainTitle}>Roadmap</div>
               </div>
             </Grid>
-            <Grid container>
+            <Grid container className={classes.roadmapWrapper}>
               <div className={classes.roadmapItem}>
                 <div className={classes.roadmapItemTitle}>Launch</div>
                 <div className={classes.roadmapItemText}>
@@ -566,32 +560,32 @@ const Home = () => {
               rowSpacing={4}
               columnSpacing={{ xs: 2, sm: 6, md: 12 }}
             >
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <img src={Team1} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <img src={Team2} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <img src={Team3} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <img src={Team4} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <img src={Team5} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={4}>
                 <img src={Team6} className={classes.itemTeamImage} />
                 <div className={classes.itemTeamName}>Name</div>
                 <div className={classes.itemTeamRole}>Role</div>
