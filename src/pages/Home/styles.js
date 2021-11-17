@@ -62,7 +62,9 @@ const useStyles = makeStyles((theme) => ({
   robotImage: {
     maxWidth: 800,
     width: "100%",
+    maxHeight: "100%",
     margin: "0 auto",
+    objectFit: "contain",
     [theme.breakpoints.down("md")]: {
       maxWidth: 600,
     },
