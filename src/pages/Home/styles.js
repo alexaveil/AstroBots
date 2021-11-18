@@ -226,6 +226,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionRoadmap: {
     backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
     backgroundPosition: "0 120px",
   },
   roadmapWrapper: {
