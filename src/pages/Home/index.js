@@ -32,6 +32,7 @@ import GoldRobot from "../../assets/images/android-gold.png";
 import GrayRobot from "../../assets/images/android-gray.png";
 import VioletRobot from "../../assets/images/android-violet.png";
 import JoinRobot from "../../assets/images/android-join.png";
+import RoadmapBackground from "../../assets/images/roadmap-background.png";
 import Team1 from "../../assets/images/team-1.png";
 import Team2 from "../../assets/images/team-2.png";
 import Team3 from "../../assets/images/team-3.png";
@@ -49,7 +50,7 @@ const slickSettings = {
   centerMode: true,
   infinite: true,
   className: "center",
-  centerPadding: '0',
+  centerPadding: "0",
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -152,24 +153,20 @@ const Home = () => {
                   </div>
                   <div className={classes.textWhite}>
                     <p>
-                      Powered by Open AI’s GPT-3, Astro Bots are able to
-                      <br /> give you fast and advanced answers to your
-                      <br /> questions while having fun and very deep
-                      <br /> conversations.
+                      Powered by Open AI’s GPT-3, Astro Bots are able to give
+                      you fast and advanced answers to your questions while
+                      having fun and very deep conversations.
                     </p>
                     <p>
-                      Open AI was founded by Elon Musk and GPT-3 is
-                      <br /> the most advanced language generator, trained with
-                      <br />
-                      over 175 billion parameters.
+                      Open AI was founded by Elon Musk and GPT-3 is the most
+                      advanced language generator, trained with over 175 billion
+                      parameters.
                     </p>
                     <p>
                       Each Astro’s goal is to be your own unique personal
-                      <br />
                       assistant that will initially answer all of your questions
-                      <br />
-                      and chat with you but will later also help you learn,
-                      <br /> and assist you with your everyday tasks.
+                      and chat with you but will later also help you learn, and
+                      assist you with your everyday tasks.
                     </p>
                   </div>
                 </div>
@@ -463,7 +460,11 @@ const Home = () => {
         </section>
 
         {/* Roadmap */}
-        <section id="roadmap" className={classes.sectionBlack}>
+        <section
+          id="roadmap"
+          className={`${classes.sectionBlack} ${classes.sectionRoadmap}`}
+          style={{ backgroundImage: `url(${RoadmapBackground})` }}
+        >
           <Container className={classes.sectionWrapper}>
             <Grid container>
               <div className={classes.mainTitleWrapper}>
@@ -472,7 +473,9 @@ const Home = () => {
             </Grid>
             <Grid container className={classes.roadmapWrapper}>
               <div className={classes.roadmapItem}>
-                <div className={classes.roadmapItemTitle}>Launch</div>
+                <div className={classes.roadmapItemTitleWrapper}>
+                  <div className={classes.roadmapItemTitle}>Launch</div>
+                </div>
                 <div className={classes.roadmapItemText}>
                   <p>
                     Minting date will be announced as soon as we have everything
@@ -485,8 +488,10 @@ const Home = () => {
                 </div>
               </div>
               <div className={classes.roadmapItem}>
-                <div className={classes.roadmapItemTitle}>
-                  OUR MOST VALUABLE ASSET
+                <div className={classes.roadmapItemTitleWrapper}>
+                  <div className={classes.roadmapItemTitle}>
+                    OUR MOST VALUABLE ASSET
+                  </div>
                 </div>
                 <div className={classes.roadmapItemText}>
                   <p>
@@ -508,7 +513,9 @@ const Home = () => {
                 </div>
               </div>
               <div className={classes.roadmapItem}>
-                <div className={classes.roadmapItemTitle}>App Release</div>
+                <div className={classes.roadmapItemTitleWrapper}>
+                  <div className={classes.roadmapItemTitle}>App Release</div>
+                </div>
                 <div className={classes.roadmapItemText}>
                   <p>
                     As Astro Bots start interacting more and more with humans
@@ -525,7 +532,9 @@ const Home = () => {
                 </div>
               </div>
               <div className={classes.roadmapItem}>
-                <div className={classes.roadmapItemTitle}>New Features</div>
+                <div className={classes.roadmapItemTitleWrapper}>
+                  <div className={classes.roadmapItemTitle}>New Features</div>
+                </div>
                 <div className={classes.roadmapItemText}>
                   <p>
                     Want to write an email? find the name of a song? set a
@@ -542,7 +551,9 @@ const Home = () => {
                 </div>
               </div>
               <div className={classes.roadmapItem}>
-                <div className={classes.roadmapItemTitle}>Our future</div>
+                <div className={classes.roadmapItemTitleWrapper}>
+                  <div className={classes.roadmapItemTitle}>Our future</div>
+                </div>
                 <div className={classes.roadmapItemText}>
                   <p>
                     Our main focus will be to keep building and expanding our

@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 16,
       padding: "5px 15px",
       top: "50%",
-      right: "2%"
+      right: "2%",
     },
   },
   chatButton: {
@@ -98,14 +98,17 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     height: "100%",
+    maxWidth: "70%",
     [theme.breakpoints.down("md")]: {
       padding: "20px 40px",
+      maxWidth: "100%",
     },
   },
   mainTitleWrapper: {
     width: "100%",
     textAlign: "center",
-    marginBottom: 30,
+    marginTop: 30,
+    marginBottom: 20,
   },
   mainTitle: {
     fontFamily: "Helvetica Neue",
@@ -116,6 +119,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textWhite: {
     color: "white",
+    marginBottom: 20,
   },
   textRed: {
     color: "#d10000",
@@ -125,13 +129,13 @@ const useStyles = makeStyles((theme) => ({
   },
   textStory: {
     textAlign: "center",
-    fotnStyle: "italic"
+    fotnStyle: "italic",
   },
   contentImageWrapper: {
     [theme.breakpoints.down("md")]: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
     },
   },
   contentImage: {
@@ -170,34 +174,92 @@ const useStyles = makeStyles((theme) => ({
     color: "rgb(255 255 255 / 50%)",
     fontSize: 14,
   },
+  sectionRoadmap: {
+    backgroundSize: "contain",
+    backgroundPosition: "0 120px",
+  },
   roadmapWrapper: {
-    paddingBottom: 50
+    paddingBottom: 50,
   },
   roadmapItem: {
-    backgroundColor: "#101492",
+    border: "5px solid #101492",
     color: "white",
-    margin: "20px 0",
+    margin: "30px 0",
     padding: "30px 40px",
     textAlign: "center",
-    borderRadius: 15,
-    borderTopLeftRadius: 0,
-    borderBottomRightRadius: 0,
+    position: "relative",
+    "&::after": {
+      content: '""',
+      display: "flex",
+      position: "absolute",
+      bottom: -65,
+      left: 0,
+      right: 0,
+      margin: "0 auto",
+      height: 60,
+      width: 5,
+      backgroundColor: "#101492",
+    },
+    "&:last-child": {
+      "&::after": {
+        display: "none",
+      },
+    },
     [theme.breakpoints.down("sm")]: {
       padding: "20px 30px",
     },
   },
+  roadmapItemTitleWrapper: {
+    width: '100%',
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "center",
+  },
   roadmapItemTitle: {
+    position: "absolute",
+    top: -25,
     fontSize: 18,
     fontWeight: "bold",
     textTransform: "uppercase",
-    marginBottom: 10,
+    backgroundColor: "#101492",
+    width: 'auto',
+    padding: '10px 10px',
+    "&::before": {
+      content: '""',
+      display: "flex",
+      position: "absolute",
+      left: -30,
+      top: 0,
+      borderStyle: 'solid',
+      borderWidth: '0 0 47px 30px',
+      borderColor: 'transparent transparent #101492 transparent',
+      [theme.breakpoints.down("sm")]: {
+        display: 'none'
+      },
+    },
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      borderStyle: 'solid',
+      right: -30,
+      top: 0,
+      borderWidth: '47px 0 0 30px',
+      borderColor: 'transparent transparent transparent #101492',
+      [theme.breakpoints.down("sm")]: {
+        display: 'none'
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 16,
+    },
   },
   itemImage: {},
   progressesWrapper: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "50px",
+    padding: 50,
+    paddingBottom: 0,
     height: "100%",
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
@@ -216,7 +278,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     paddingRight: 20,
     maxWidth: 100,
-    width: '100%'
+    width: "100%",
   },
   progressItemProgress: {
     width: "100%",
