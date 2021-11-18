@@ -14,7 +14,7 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
+import div from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -368,56 +368,57 @@ const Home = () => {
               </div>
             </Grid>
             <Grid container className={classes.sectionSmallWrapper}>
-              <Timeline>
-                <TimelineItem className={classes.mintItem}>
-                  <TimelineSeparator>
-                    <TimelineConnector className={classes.mintConnectorFirst} />
-                    <TimelineDot className={classes.mintIconWrapper}>
-                      <StopIcon className={classes.mintIcon} />
-                    </TimelineDot>
-                    <TimelineConnector className={classes.mintConnector} />
-                  </TimelineSeparator>
-                  <TimelineContent>
-                    <div className={classes.mintItemTitle}>
-                      25% - Preservation
+              <div className={classes.mintWrapper}>
+                <div className={classes.mintItem}>
+                  <div
+                    className={`${classes.mintItemIcon} ${classes.mintItemColor1}`}
+                  >
+                    25%
+                  </div>
+                  <div className={classes.mintItemContent}>
+                    <div
+                      className={`${classes.mintItemTitle} ${classes.mintItemTitle1}`}
+                    >
+                      Preservation
                     </div>
                     <div className={classes.mintItemText}>
                       Astro Vault unlocked: 10% of the second-market royalties
                       will be dedicated to ensure the project’s longevity
                       through marketing campaigns and strategic partnerships.
                     </div>
-                  </TimelineContent>
-                </TimelineItem>
-                <TimelineItem className={classes.mintItem}>
-                  <TimelineSeparator>
-                    <TimelineDot className={classes.mintIconWrapper}>
-                      <StopIcon className={classes.mintIcon} />
-                    </TimelineDot>
-                    <TimelineConnector className={classes.mintConnector} />
-                  </TimelineSeparator>
-                  <TimelineContent>
-                    <div className={classes.mintItemTitle}>50% - Gratitude</div>
+                  </div>
+                </div>
+                <div className={classes.mintItem}>
+                  <div
+                    className={`${classes.mintItemIcon} ${classes.mintItemColor2}`}
+                  >
+                    50%
+                  </div>
+                  <div className={classes.mintItemContent}>
+                    <div
+                      className={`${classes.mintItemTitle} ${classes.mintItemTitle2}`}
+                    >
+                      Gratitude
+                    </div>
                     <div className={classes.mintItemText}>
                       A $20,000 fund will be created and be donated to a charity
                       of the community’s choosing. 40 Astro Bots will be
                       airdropped to random holders. More funds are allocated to
                       ensuring the project’s success.
                     </div>
-                  </TimelineContent>
-                </TimelineItem>
-                <TimelineItem className={classes.mintItem}>
-                  <TimelineSeparator>
-                    <TimelineDot className={classes.mintIconWrapper}>
-                      <StopIcon className={classes.mintIcon} />
-                    </TimelineDot>
-                    <TimelineConnector className={classes.mintConnector} />
-                  </TimelineSeparator>
-                  <TimelineContent>
+                  </div>
+                </div>
+                <div className={classes.mintItem}>
+                  <div
+                    className={`${classes.mintItemIcon} ${classes.mintItemColor3}`}
+                  >
+                    75%
+                  </div>
+                  <div className={classes.mintItemContent}>
                     <div
-                      className={classes.mintItemTitle}
-                      style={{ color: "#6c00ff" }}
+                      className={`${classes.mintItemTitle} ${classes.mintItemTitle3}`}
                     >
-                      75% - Reward
+                      Reward
                     </div>
                     <div className={classes.mintItemText}>
                       Astro Fund: $100,000 will be rewarded to members of the
@@ -425,21 +426,19 @@ const Home = () => {
                       ecosystem, talented artists and members that make
                       remarkable contributions of any kind for the community.
                     </div>
-                  </TimelineContent>
-                </TimelineItem>
-                <TimelineItem className={classes.mintItem}>
-                  <TimelineSeparator>
-                    <TimelineDot className={classes.mintIconWrapper}>
-                      <StopIcon className={classes.mintIcon} />
-                    </TimelineDot>
-                    <TimelineConnector className={classes.mintConnector} />
-                  </TimelineSeparator>
-                  <TimelineContent>
+                  </div>
+                </div>
+                <div className={classes.mintItem}>
+                  <div
+                    className={`${classes.mintItemIcon} ${classes.mintItemColor4}`}
+                  >
+                    100%
+                  </div>
+                  <div className={classes.mintItemContent}>
                     <div
-                      className={classes.mintItemTitle}
-                      style={{ color: "#8d17f2" }}
+                      className={`${classes.mintItemTitle} ${classes.mintItemTitle4}`}
                     >
-                      100% - Liftoff
+                      Liftoff
                     </div>
                     <div className={classes.mintItemText}>
                       Astro Bots act as your exclusive membership card for the
@@ -452,9 +451,9 @@ const Home = () => {
                       are set in motion. Imagine chatting with an Astro version
                       of your favorite artist or influencer.
                     </div>
-                  </TimelineContent>
-                </TimelineItem>
-              </Timeline>
+                  </div>
+                </div>
+              </div>
             </Grid>
           </Container>
         </section>

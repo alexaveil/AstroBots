@@ -143,36 +143,86 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 500,
     width: "100%",
   },
+  mintWrapper: {
+    marginTop: 20
+  },
   mintItem: {
-    "&:before": {
-      display: "none",
-    },
+    display: "flex",
+    marginBottom: 20
   },
-  mintConnectorFirst: {
-    position: "absolute",
-    height: 30,
-    top: -10,
+  mintItemIcon: {
+    color: "white",
+    fontSize: 30,
+    fontWeight: "bold",
+    border: "3px solid white",
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 20
   },
-  mintConnector: {
-    margin: "-15px 0",
+  mintItemColor1: {
+    borderColor: "#0047FF"
   },
-  mintIconWrapper: {
-    backgroundColor: "transparent!important",
-    margin: "0!important",
+  mintItemColor2: {
+    borderColor: "#000AFF"
   },
-  mintIcon: {
-    transform: "rotate(45deg)",
-    color: "#0063ff",
+  mintItemColor3: {
+    borderColor: "#6100FF"
+  },
+  mintItemColor4: {
+    borderColor: "#8130E9"
+  },
+  mintItemContent: {
+    flex: 1,
   },
   mintItemTitle: {
     color: "#0063ff",
     fontSize: 24,
     fontWeight: "bold",
+    position: "relative",
+    marginTop: 12,
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      left: -20,
+      right: 0,
+      bottom: -5,
+      height: 3,
+      width: '101%',
+      backgroundColor: "#101492",
+    },
+  },
+  mintItemTitle1: {
+    color: "#0047FF",
+    "&::after": {
+      backgroundColor: "#0047FF",
+    }
+  },
+  mintItemTitle2: {
+    color: "#000AFF",
+    "&::after": {
+      backgroundColor: "#000AFF",
+    }
+  },
+  mintItemTitle3: {
+    color: "#6100FF",
+    "&::after": {
+      backgroundColor: "#6100FF",
+    }
+  },
+  mintItemTitle4: {
+    color: "#8130E9",
+    "&::after": {
+      backgroundColor: "#8130E9",
+    }
   },
   mintItemText: {
     padding: "20px 0",
-    color: "rgb(255 255 255 / 50%)",
-    fontSize: 14,
+    color: "white",
+    fontSize: 16,
   },
   sectionRoadmap: {
     backgroundSize: "contain",
