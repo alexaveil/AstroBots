@@ -152,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mintItemIcon: {
     color: "white",
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: "bold",
     border: "3px solid white",
     width: 100,
