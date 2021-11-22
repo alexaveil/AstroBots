@@ -15,9 +15,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     margin: '20px 0',
+    [theme.breakpoints.down("md")]: {
+      margin: 0
+    },
   },
   logoImage: {
-    maxWidth: 130
+    maxWidth: 130,
+    [theme.breakpoints.down("md")]: {
+      maxWidth: 80,
+    },
   },
   icons: {
     display: 'flex',
@@ -26,7 +32,11 @@ const useStyles = makeStyles((theme) => ({
     margin: '20px 0',
   },
   iconsItem: {
-    padding: '0 10px'
+    padding: '0 10px',
+    [theme.breakpoints.down("md")]: {
+      padding: "0",
+      transform: "scale(0.75)",
+    },
   },
 }))
 

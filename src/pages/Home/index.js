@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
@@ -13,13 +13,6 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import Timeline from "@mui/lab/Timeline";
-import div from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import StopIcon from "@mui/icons-material/Stop";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 
@@ -95,9 +88,13 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   paddingRight: 0,
 }));
 
-const BorderLinearProgress = styled(LinearProgress)(() => ({
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 30,
   borderRadius: 30,
+  [theme.breakpoints.down("sm")]: {
+    height: 15,
+    borderRadius: 15,
+  },
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor: "transparent",
     border: "0.5px solid rgba(255, 255, 255, 0.5)",
@@ -105,6 +102,9 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 30,
     backgroundColor: "white",
+    [theme.breakpoints.down("sm")]: {
+      borderRadius: 15,
+    },
   },
 }));
 
@@ -200,31 +200,29 @@ const Home = () => {
                 </p>
               </div>
             </Grid>
-            <Grid container>
-              <Grid item xs={12}>
-                <Slider {...slickSettings}>
-                  <div className={classes.itemImage}>
-                    <img src={GoldRobot} className={classes.contentImage} />
-                  </div>
-                  <div className={classes.itemImage}>
-                    <img src={GrayRobot} className={classes.contentImage} />
-                  </div>
-                  <div className={classes.itemImage}>
-                    <img src={VioletRobot} className={classes.contentImage} />
-                  </div>
-                  <div className={classes.itemImage}>
-                    <img src={GoldRobot} className={classes.contentImage} />
-                  </div>
-                  <div className={classes.itemImage}>
-                    <img src={GrayRobot} className={classes.contentImage} />
-                  </div>
-                  <div className={classes.itemImage}>
-                    <img src={VioletRobot} className={classes.contentImage} />
-                  </div>
-                </Slider>
-              </Grid>
-            </Grid>
           </Container>
+          <div className={classes.robotSlider}>
+            <Slider {...slickSettings}>
+              <div className={classes.itemImage}>
+                <img src={GoldRobot} className={classes.contentImage} />
+              </div>
+              <div className={classes.itemImage}>
+                <img src={GrayRobot} className={classes.contentImage} />
+              </div>
+              <div className={classes.itemImage}>
+                <img src={VioletRobot} className={classes.contentImage} />
+              </div>
+              <div className={classes.itemImage}>
+                <img src={GoldRobot} className={classes.contentImage} />
+              </div>
+              <div className={classes.itemImage}>
+                <img src={GrayRobot} className={classes.contentImage} />
+              </div>
+              <div className={classes.itemImage}>
+                <img src={VioletRobot} className={classes.contentImage} />
+              </div>
+            </Slider>
+          </div>
         </section>
 
         {/* Personality */}
@@ -373,7 +371,7 @@ const Home = () => {
                   <div
                     className={`${classes.mintItemIcon} ${classes.mintItemColor1}`}
                   >
-                    25%
+                    <span className={classes.mintItemPercent}>25%</span>
                   </div>
                   <div className={classes.mintItemContent}>
                     <div
@@ -381,10 +379,12 @@ const Home = () => {
                     >
                       Preservation
                     </div>
-                    <div className={classes.mintItemText}>
-                      Astro Vault unlocked: 10% of the second-market royalties
-                      will be dedicated to ensure the project’s longevity
-                      through marketing campaigns and strategic partnerships.
+                    <div className={classes.textWhite}>
+                      <p>
+                        Astro Vault unlocked: 10% of the second-market royalties
+                        will be dedicated to ensure the project’s longevity
+                        through marketing campaigns and strategic partnerships.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -392,7 +392,7 @@ const Home = () => {
                   <div
                     className={`${classes.mintItemIcon} ${classes.mintItemColor2}`}
                   >
-                    50%
+                    <span className={classes.mintItemPercent}>50%</span>
                   </div>
                   <div className={classes.mintItemContent}>
                     <div
@@ -400,11 +400,14 @@ const Home = () => {
                     >
                       Gratitude
                     </div>
-                    <div className={classes.mintItemText}>
-                      A $20,000 fund will be created and be donated to a charity
-                      of the community’s choosing. 40 Astro Bots will be
-                      airdropped to random holders. More funds are allocated to
-                      ensuring the project’s success.
+                    <div className={classes.textWhite}>
+                      <p>
+                        {" "}
+                        A $20,000 fund will be created and be donated to a
+                        charity of the community’s choosing. 40 Astro Bots will
+                        be airdropped to random holders. More funds are
+                        allocated to ensuring the project’s success.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -412,7 +415,7 @@ const Home = () => {
                   <div
                     className={`${classes.mintItemIcon} ${classes.mintItemColor3}`}
                   >
-                    75%
+                    <span className={classes.mintItemPercent}>75%</span>
                   </div>
                   <div className={classes.mintItemContent}>
                     <div
@@ -420,11 +423,13 @@ const Home = () => {
                     >
                       Reward
                     </div>
-                    <div className={classes.mintItemText}>
-                      Astro Fund: $100,000 will be rewarded to members of the
-                      community who develop innovative features into the
-                      ecosystem, talented artists and members that make
-                      remarkable contributions of any kind for the community.
+                    <div className={classes.textWhite}>
+                      <p>
+                        Astro Fund: $100,000 will be rewarded to members of the
+                        community who develop innovative features into the
+                        ecosystem, talented artists and members that make
+                        remarkable contributions of any kind for the community.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -432,7 +437,7 @@ const Home = () => {
                   <div
                     className={`${classes.mintItemIcon} ${classes.mintItemColor4}`}
                   >
-                    100%
+                    <span className={classes.mintItemPercent}>100%</span>
                   </div>
                   <div className={classes.mintItemContent}>
                     <div
@@ -440,16 +445,20 @@ const Home = () => {
                     >
                       Liftoff
                     </div>
-                    <div className={classes.mintItemText}>
-                      Astro Bots act as your exclusive membership card for the
-                      Astro Club where you get access to eth weekly giveaways,
-                      exclusive drops, private metaverse events, and where we
-                      will create as much alpha as we possibly can in our
-                      private channels to reward all holders.
-                      <br />
-                      Collabs with some of the biggest artists and influencers
-                      are set in motion. Imagine chatting with an Astro version
-                      of your favorite artist or influencer.
+                    <div className={classes.textWhite}>
+                      <p>
+                        {" "}
+                        Astro Bots act as your exclusive membership card for the
+                        Astro Club where you get access to eth weekly giveaways,
+                        exclusive drops, private metaverse events, and where we
+                        will create as much alpha as we possibly can in our
+                        private channels to reward all holders.
+                      </p>
+                      <p>
+                        Collabs with some of the biggest artists and influencers
+                        are set in motion. Imagine chatting with an Astro
+                        version of your favorite artist or influencer.
+                      </p>
                     </div>
                   </div>
                 </div>

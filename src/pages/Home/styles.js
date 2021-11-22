@@ -83,9 +83,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 900,
     width: "100%",
     margin: "0 auto",
-    [theme.breakpoints.down("md")]: {
-      padding: "0px 40px",
-    },
   },
   sectionBlack: {
     backgroundColor: "#000000",
@@ -100,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     maxWidth: "70%",
     [theme.breakpoints.down("md")]: {
-      padding: "20px 40px",
+      padding: 20,
       maxWidth: "100%",
     },
   },
@@ -109,6 +106,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: 30,
     marginBottom: 20,
+    [theme.breakpoints.down("md")]: {
+      marginTop: 0,
+      marginBottom: 0,
+    },
   },
   mainTitle: {
     fontFamily: "Helvetica Neue",
@@ -131,6 +132,16 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fotnStyle: "italic",
   },
+  robotSlider: {
+    maxWidth: 1200,
+    margin: "0 auto",
+    padding: "0 20px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      padding: 0,
+      overflow: "hidden"
+    },
+  },
   contentImageWrapper: {
     [theme.breakpoints.down("md")]: {
       display: "flex",
@@ -148,11 +159,23 @@ const useStyles = makeStyles((theme) => ({
   },
   mintItem: {
     display: "flex",
-    marginBottom: 20
+    marginBottom: 20,
+    [theme.breakpoints.down("sm")]: {
+      "&:last-child": {
+        marginBottom: 0,
+      },
+    },
   },
-  mintItemIcon: {
+  mintItemPercent: {
     color: "white",
     fontSize: 25,
+    marginTop: 6, 
+    marginLeft: 4,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 16,
+    },
+  },
+  mintItemIcon: {
     fontWeight: "bold",
     border: "3px solid white",
     width: 100,
@@ -161,7 +184,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 20
+    marginRight: 20,
+    [theme.breakpoints.down("sm")]: {
+      width: 60,
+      height: 60,
+      borderRadius: 30,
+      marginRight: 10,
+    },
   },
   mintItemColor1: {
     borderColor: "#0047FF"
@@ -193,6 +222,13 @@ const useStyles = makeStyles((theme) => ({
       height: 3,
       width: '101%',
       backgroundColor: "#101492",
+      [theme.breakpoints.down("sm")]: {
+        left: -10,
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 18,
+      marginTop: 0,
     },
   },
   mintItemTitle1: {
@@ -219,18 +255,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#8130E9",
     }
   },
-  mintItemText: {
-    padding: "20px 0",
-    color: "white",
-    fontSize: 16,
-  },
   sectionRoadmap: {
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 120px",
-  },
-  roadmapWrapper: {
-    paddingBottom: 50,
   },
   roadmapItem: {
     border: "5px solid #101492",
@@ -268,21 +296,25 @@ const useStyles = makeStyles((theme) => ({
   },
   roadmapItemTitle: {
     position: "absolute",
-    top: -25,
+    display: "flex",
+    alignItems: "center",
+    top: -22,
+    height: 40,
     fontSize: 18,
     fontWeight: "bold",
     textTransform: "uppercase",
     backgroundColor: "#101492",
-    width: 'auto',
-    padding: '10px 10px',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 4,
     "&::before": {
       content: '""',
       display: "flex",
       position: "absolute",
-      left: -30,
+      left: -20,
       top: 0,
       borderStyle: 'solid',
-      borderWidth: '0 0 47px 30px',
+      borderWidth: '0 0 40px 20px',
       borderColor: 'transparent transparent #101492 transparent',
       [theme.breakpoints.down("sm")]: {
         display: 'none'
@@ -292,9 +324,9 @@ const useStyles = makeStyles((theme) => ({
       content: '""',
       position: "absolute",
       borderStyle: 'solid',
-      right: -30,
+      right: -20,
       top: 0,
-      borderWidth: '47px 0 0 30px',
+      borderWidth: '40px 0 0 20px',
       borderColor: 'transparent transparent transparent #101492',
       [theme.breakpoints.down("sm")]: {
         display: 'none'
@@ -321,6 +353,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     margin: "10px 0",
+    [theme.breakpoints.down("sm")]: {
+      margin: "5px 0",
+    },
   },
   progressItemText: {
     fontSize: 18,
