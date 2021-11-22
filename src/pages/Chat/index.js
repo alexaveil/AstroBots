@@ -9,6 +9,8 @@ import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import RedRobot from "../../assets/images/android-red.png";
 import ChatBackground from "../../assets/images/chat-background.png";
@@ -29,9 +31,14 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
 
 const Chat = () => {
   const classes = useStyles();
+  const [sidebarMobile, setSidebarMobile] = useState(false);
   const [hideSearch, setHideSearch] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const handleSidebarMobile = () => {
+    setSidebarMobile(!sidebarMobile);
+  };
 
   const handleSearch = () => {
     setHideSearch(!hideSearch);
@@ -48,9 +55,25 @@ const Chat = () => {
   return (
     <main className={classes.wrapper}>
       <div className={classes.chatWrapper}>
-        <div className={classes.sidebar}>
+        <div
+          className={`${classes.sidebar} ${
+            sidebarMobile ? classes.sidebarMobile : ""
+          }`}
+        >
           <div className={classes.userWrapper}>
             <div className={classes.userName}>0xc32563q6sftw35tES</div>
+            <div className={classes.closeSidebar}>
+              <IconButton
+                className={classes.closeSidebarBtn}
+                component="span"
+                onClick={handleSidebarMobile}
+              >
+                <ArrowForwardIosIcon
+                  sx={{ fontSize: 25 }}
+                  className={classes.icon}
+                />
+              </IconButton>
+            </div>
           </div>
           <div className={classes.robotWrapper}>
             <div>
@@ -114,14 +137,30 @@ const Chat = () => {
           style={{ backgroundImage: `url(${ChatBackground})` }}
         >
           <div className={classes.topPanel}>
-            <div className={classes.topSearchWrapper}>
-              {!hideSearch && (
+            {hideSearch && (
+              <>
+                <div className={classes.topOpenSidebar}>
+                  <IconButton component="span" onClick={handleSidebarMobile}>
+                    <ArrowBackIosIcon
+                      sx={{ fontSize: 25 }}
+                      className={classes.icon}
+                    />
+                  </IconButton>
+                </div>
+                <div className={classes.topUser}>
+                  <img src={RedRobot} className={classes.topUserImage} />
+                  <div className={classes.topUserName}>Astro</div>
+                </div>
+              </>
+            )}
+            {!hideSearch && (
+              <div className={classes.topSearchWrapper}>
                 <input
                   placeholder={"Search a message"}
                   className={classes.input}
                 />
-              )}
-            </div>
+              </div>
+            )}
             <div className={classes.topPanelIcons}>
               <IconButton component="span" onClick={handleSearch}>
                 <SearchIcon sx={{ fontSize: 25 }} className={classes.icon} />

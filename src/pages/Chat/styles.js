@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     padding: 30,
+    [theme.breakpoints.down("md")]: {
+      padding: 0,
+    },
   },
   chatWrapper: {
     margin: "0 auto",
@@ -39,16 +42,44 @@ const useStyles = makeStyles((theme) => ({
       display: "none"
     },
   },
+  sidebarMobile: {
+    [theme.breakpoints.down("md")]: {
+      position: "absolute",
+      display: "block",
+      width: "100%",
+      height: "100%",
+      zIndex: 9
+    },
+  },
   userWrapper: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "space-between"
   },
   userName: {
     color: 'white',
     fontSize: 18
   },
+  closeSidebar: {
+    display: 'none',
+    [theme.breakpoints.down("md")]: {
+      display: "flex"
+    },
+  },
+  closeSidebarBtn: {
+    padding: "0!important"
+  },
   robotWrapper: {
     marginTop: 100,
+    [theme.breakpoints.down("md")]: {
+      margin: "0 auto",
+      marginTop: 40,
+      maxWidth: '60%',
+      width: '100%',
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: '100%',
+    },
   },
   robotName: {
     textAlign: "center",
@@ -90,15 +121,40 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "row",
+    position: "relative",
     alignItems: "center",
     justifyContent: "flex-end",
     padding: "0 10px",
+  },
+  topOpenSidebar: {
+    display: "none",
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+    },
+  },
+  topUser: {
+    display: "none",
+    flexDirection: "column",
+    alignItems: "center",
+    flex: 1,
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+    },
+  },
+  topUserImage: {
+    borderRadius: 20,
+    width: 40,
+    padding: 4,
+  },
+  topUserName: {
+    color: "#FFFFFF",
+    fontSize: 12
   },
   topSearchWrapper: {
     width: "40%",
     [theme.breakpoints.down("sm")]: {
       width: "70%",
-    },
+    }
   },
   icon: {
     color: "#fff",
@@ -108,6 +164,9 @@ const useStyles = makeStyles((theme) => ({
     padding: 50,
     display: "flex",
     flexDirection: "column",
+    [theme.breakpoints.down("md")]: {
+      padding: 20,
+    },
   },
   messagePeriod: {
     marginBottom: 20
